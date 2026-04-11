@@ -5,7 +5,7 @@ const programs = [
   {
     id: "md-adjunct",
     color: "cardBurgundy",
-    image: "/hmd-oracle.jpg",
+    image: "/hmd-md-adjunct.jpg",
     imagePosition: "center 20%",
     name: "HMD MD Adjunct Program",
     desc: "Prepares medical students to become competitive residency applicants.",
