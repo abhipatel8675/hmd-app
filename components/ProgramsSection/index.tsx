@@ -21,8 +21,8 @@ const programs = [
   {
     id: "residency-adjunct",
     color: "cardTeal",
-    image: "/hmd-journal-club.jpg",
-    imagePosition: "center 40%",
+    image: "/hmd-residency-adjunct.jpg",
+    imagePosition: "center 30%",
     name: "HMD Residency Adjunct Program",
     desc: "Strengthens residents' training to excel in competitive career pathways.",
   },
