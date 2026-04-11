@@ -78,8 +78,12 @@ const ecosystem = [
         desc: "Comprehensive question bank for board exam preparation",
       },
       {
-        name: "HMD Articles & Evidence Summary",
-        desc: "Original research summaries and clinical evidence reviews",
+        name: "HMD Articles",
+        desc: "Original research summaries and clinical insights",
+      },
+      {
+        name: "HMD Evidence Summary",
+        desc: "Clinical evidence reviews and appraisals",
       },
     ],
   },
