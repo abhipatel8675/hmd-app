@@ -44,8 +44,8 @@ export default function FoundingSection() {
         {/* RIGHT */}
         <div className={styles.right}>
           <div className={styles.journalCard}>
-            <p className={styles.journalTag}>HMD Journal Club</p>
-            <h3 className={styles.journalTitle}>HMD Journal Club</h3>
+            <p className={styles.journalTag}>HMD Journal Club & Research</p>
+            <h3 className={styles.journalTitle}>HMD Journal Club & Research</h3>
             <p className={styles.journalDesc}>
               Coordinates on research projects, critical appraisals, and evidence-based
               medicine core skills for physician leaders.
