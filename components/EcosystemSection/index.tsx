@@ -71,7 +71,7 @@ const ecosystem = [
       },
       {
         name: "HMD Journal Club",
-        desc: "Peer-reviewed literature discussions and evidence analysis",
+        desc: "Peer-reviewed literature discussions, evidence analyses, and research collaborations",
       },
       {
         name: "iQBank Step 2 CK",
