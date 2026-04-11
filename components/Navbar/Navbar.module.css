@@ -1,0 +1,109 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo {
+  background: var(--navy-mid);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-family: var(--font-cinzel), serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+}
+
+.tagline {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.links li a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.links li a:hover {
+  color: var(--gold-light);
+}
+
+.links li a .chevron {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+.signIn {
+  flex-shrink: 0;
+  font-family: var(--font-cinzel), serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 8px 18px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.signIn:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 20px;
+  }
+  .links {
+    display: none;
+  }
+  .tagline {
+    display: none;
+  }
+}

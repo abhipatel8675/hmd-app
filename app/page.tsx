@@ -1,9 +1,27 @@
+import Navbar from "@/components/Navbar";
+import HeroBanner from "@/components/HeroBanner";
 import HeroSection from "@/components/HeroSection";
+import ProgramsSection from "@/components/ProgramsSection";
+import FoundingSection from "@/components/FoundingSection";
+import IConnectSection from "@/components/iConnectSection";
+import CurriculumSection from "@/components/CurriculumSection";
+import NewsletterSection from "@/components/NewsletterSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroBanner />
+        <HeroSection />
+        <ProgramsSection />
+        <FoundingSection />
+        <IConnectSection />
+        <CurriculumSection />
+        <NewsletterSection />
+      </main>
+      <Footer />
+    </>
   );
 }

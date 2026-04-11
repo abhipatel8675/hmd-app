@@ -37,20 +37,20 @@ export default function HeroSection() {
 
         {/* LEFT: Editorial Copy */}
         <div className={styles.left}>
-          <p className={styles.overline}>Physician Executive Pathway</p>
+          <p className={styles.overline}>HMD Physician Executive Pathway</p>
 
           <h2 className={styles.headline}>
-            Where Medicine<br />
-            Meets <em>Executive</em><br />
-            Leadership
+            Learn How Business Administration,
+            Public Health And Policy, And Health
+            Informatics Programs Integrate With{" "}
+            <em>Medical Education</em>
           </h2>
 
           <div className={styles.rule} />
 
           <p className={styles.sub}>
-            Business administration, public health &amp; policy, and health informatics
-            integrated into a single physician leadership pathway —
-            designed for the C-suite from day one.
+            The HMD Physician Executive Pathway trains vertically integrated,
+            C-suite physician leaders.
           </p>
 
           <div className={styles.programmeLabel}>
@@ -61,25 +61,13 @@ export default function HeroSection() {
             <a href="#" className={styles.btnPrimary}>
               Explore the Pathway
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path
-                  d="M2 7H12M8 3L12 7L8 11"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             <a href="#" className={styles.btnGhost}>
               Join HMD Campus
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path
-                  d="M1 6H11M7 2L11 6L7 10"
-                  stroke="currentColor"
-                  strokeWidth="1.3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M1 6H11M7 2L11 6L7 10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
           </div>
