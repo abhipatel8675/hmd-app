@@ -13,8 +13,8 @@ const programs = [
   {
     id: "physician-exec",
     color: "cardNavy",
-    image: "/hmd-hero-bg.jpg",
-    imagePosition: "center center",
+    image: "/hmd-physician-exec.jpg",
+    imagePosition: "center 30%",
     name: "HMD Physician Executive Pathway",
     desc: "Develops physicians into C-suite–ready healthcare leaders.",
   },

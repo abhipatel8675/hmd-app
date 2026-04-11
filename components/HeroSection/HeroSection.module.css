@@ -51,7 +51,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
@@ -64,11 +64,11 @@
    LEFT — EDITORIAL COPY COLUMN
    ══════════════════════════════ */
 .left {
-  padding: 80px 56px 80px 0;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-right: 1px solid rgba(201,168,76,0.18);
+  max-width: 720px;
 }
 
 /* Overline badge */
@@ -489,13 +489,7 @@
     flex: unset;
   }
   .left {
-    border-right: none;
-    border-bottom: 1px solid rgba(201,168,76,0.15);
     padding: 48px 0 40px;
-  }
-  .right {
-    padding: 40px 0 48px;
-    align-self: unset;
   }
   .statStrip {
     grid-template-columns: 1fr 1fr;
