@@ -77,14 +77,18 @@
 }
 
 .cardImage {
-  height: 180px;
+  height: 200px;
   position: relative;
   overflow: hidden;
 }
 
-.cardBurgundy .cardImage { background: linear-gradient(135deg, #4a1a25 0%, #6B2737 60%, #8b3345 100%); }
-.cardNavy .cardImage    { background: linear-gradient(135deg, #0a1628 0%, #112240 60%, #1a3260 100%); }
-.cardTeal .cardImage    { background: linear-gradient(135deg, #0d2626 0%, #1A3D3D 60%, #245454 100%); }
+.cardBurgundy .cardImage { background: #4a1a25; }
+.cardNavy .cardImage    { background: #0a1628; }
+.cardTeal .cardImage    { background: #0d2626; }
+
+.cardPhoto {
+  object-fit: cover;
+}
 
 .cardImageOverlay {
   position: absolute;

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./HeroSection.module.css";
 
 const articles = [
@@ -73,63 +74,17 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT: Platform Preview */}
+        {/* RIGHT: HMD Campus Screenshot */}
         <div className={styles.right}>
-
-          {/* Activity notification */}
-          <div className={styles.activityPill}>
-            <div className={styles.activityAvatar}>BJ</div>
-            <div className={styles.activityText}>
-              <strong>Bakary Jatta, MD</strong> posted a new Evidence Summary
-            </div>
-            <div className={styles.activityTime}>2 hrs ago</div>
-          </div>
-
-          {/* Platform Card */}
-          <div className={styles.platformCard}>
-
-            {/* Evidence Summary */}
-            <div>
-              <div className={styles.evidenceHeader}>
-                <span className={styles.evidenceTitle}>HMD Evidence Summary</span>
-                <span className={styles.evidenceBadge}>Latest</span>
-              </div>
-
-              {articles.map((article) => (
-                <div key={article.id} className={styles.articleItem}>
-                  <div className={styles.articleThumb}>
-                    <ArticleIcon />
-                  </div>
-                  <div>
-                    <div className={styles.articleName}>{article.title}</div>
-                    <div className={styles.articleDate}>{article.date}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.cardDivider} />
-
-            {/* Groups */}
-            <div>
-              <div className={styles.groupsHeader}>
-                <span className={styles.groupsTitle}>Groups</span>
-                <div className={styles.groupsTabs}>
-                  <span className={styles.groupsTab}>Newest</span>
-                  <span className={styles.groupsTabActive}>Active</span>
-                  <span className={styles.groupsTab}>Popular</span>
-                </div>
-              </div>
-
-              {groups.map((group) => (
-                <div key={group.id} className={styles.groupItem}>
-                  <div className={styles.groupAvatar}>{group.initials}</div>
-                  <div className={styles.groupName}>{group.name}</div>
-                  <div className={styles.groupStatus}>{group.status}</div>
-                </div>
-              ))}
-            </div>
-
+          <div className={styles.campusMockup}>
+            <Image
+              src="/hmd-campus.jpg"
+              alt="HMD Campus Platform"
+              width={600}
+              height={600}
+              className={styles.campusImage}
+              priority
+            />
           </div>
         </div>
       </div>

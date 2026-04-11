@@ -1,8 +1,20 @@
+import Image from "next/image";
 import styles from "./HeroBanner.module.css";
 
 export default function HeroBanner() {
   return (
     <section className={styles.wrap}>
+      {/* Background photo */}
+      <Image
+        src="/hmd-hero-bg.webp"
+        alt=""
+        fill
+        priority
+        className={styles.bgImage}
+        sizes="100vw"
+      />
+      <div className={styles.bgOverlay} />
+
       <div className={styles.content}>
         <p className={styles.overline}>Elite Medical Education</p>
 

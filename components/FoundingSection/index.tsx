@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./FoundingSection.module.css";
 
 export default function FoundingSection() {
@@ -52,7 +53,13 @@ export default function FoundingSection() {
           </div>
 
           <div className={styles.imageBlock}>
-            <span className={styles.imagePlaceholderText}>Journal Club Session</span>
+            <Image
+              src="/hmd-journal-club.jpg"
+              alt="HMD Journal Club"
+              fill
+              className={styles.journalPhoto}
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
           </div>
         </div>
 

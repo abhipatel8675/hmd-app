@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./iConnectSection.module.css";
 
 const features = [
@@ -26,29 +27,14 @@ export default function iConnectSection() {
 
         {/* Phone Mockup */}
         <div className={styles.phoneWrap}>
-          <div className={styles.phone}>
-            <div className={styles.phoneNotch} />
-            <div className={styles.phoneScreen}>
-              <div className={styles.phoneHeader}>HMD iConnect</div>
-              <div className={styles.phoneCard}>
-                <div className={styles.phoneCardLine} />
-                <div className={`${styles.phoneCardLine} ${styles.gold}`} />
-                <div className={styles.phoneCardLine} />
-              </div>
-              {[1, 2, 3].map((i) => (
-                <div key={i} className={styles.phoneAvatar}>
-                  <div className={styles.phoneAvatarCircle} />
-                  <div className={styles.phoneAvatarLines}>
-                    <div className={styles.phoneAvatarLine} />
-                    <div className={styles.phoneAvatarLine} />
-                  </div>
-                </div>
-              ))}
-              <div className={styles.phoneCard}>
-                <div className={styles.phoneCardLine} />
-                <div className={styles.phoneCardLine} />
-              </div>
-            </div>
+          <div className={styles.phoneImgWrap}>
+            <Image
+              src="/hmd-iconnect.png"
+              alt="HMD iConnect App"
+              width={320}
+              height={640}
+              className={styles.phoneImg}
+            />
           </div>
         </div>
 

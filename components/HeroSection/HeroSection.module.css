@@ -228,6 +228,28 @@
   overflow: hidden;
 }
 
+/* Campus screenshot mockup */
+.campusMockup {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(201,168,76,0.15);
+  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.4s ease;
+}
+.campusMockup:hover {
+  transform: perspective(1000px) rotateY(-1deg) rotateX(0deg);
+}
+
+.campusImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Activity notification */
 .activityPill {
   display: inline-flex;

@@ -1,21 +1,28 @@
+import Image from "next/image";
 import styles from "./ProgramsSection.module.css";
 
 const programs = [
   {
     id: "md-adjunct",
     color: "cardBurgundy",
+    image: "/hmd-oracle.jpg",
+    imagePosition: "center 20%",
     name: "HMD MD Adjunct Program",
     desc: "Prepares medical students to become competitive residency applicants.",
   },
   {
     id: "physician-exec",
     color: "cardNavy",
+    image: "/hmd-hero-bg.webp",
+    imagePosition: "center center",
     name: "HMD Physician Executive Pathway",
     desc: "Develops physicians into C-suite–ready healthcare leaders.",
   },
   {
     id: "residency-adjunct",
     color: "cardTeal",
+    image: "/hmd-journal-club.jpg",
+    imagePosition: "center 40%",
     name: "HMD Residency Adjunct Program",
     desc: "Strengthens residents' training to excel in competitive career pathways.",
   },
@@ -34,6 +41,14 @@ export default function ProgramsSection() {
           {programs.map((prog) => (
             <div key={prog.id} className={styles.card}>
               <div className={`${styles.cardImage} ${styles[prog.color as keyof typeof styles]}`}>
+                <Image
+                  src={prog.image}
+                  alt={prog.name}
+                  fill
+                  className={styles.cardPhoto}
+                  style={{ objectPosition: prog.imagePosition }}
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
                 <div className={styles.cardImageOverlay} />
                 <div className={styles.cardAccent} />
               </div>
