@@ -6,7 +6,7 @@ export default function HeroBanner() {
     <section className={styles.wrap}>
       {/* Background photo */}
       <Image
-        src="/hmd-hero-bg.webp"
+        src="/hmd-hero-bg.jpg"
         alt=""
         fill
         priority
