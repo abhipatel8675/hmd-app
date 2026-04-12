@@ -30,8 +30,9 @@ export default function FoundingSection() {
 
           <p className={styles.body}>
             The practice of medicine stands at a historic inflection point. Twenty-first-century
-            physicians must lead not only individual patients, but systems and institutions.
-            {!expanded && " ..."}
+            physicians must heal not only individual patients, but also the systems that serve them.
+            HMD was founded to bridge this gap by delivering Ivy-level medical education and
+            physician leadership training.
           </p>
 
           {!expanded && (
@@ -40,24 +41,22 @@ export default function FoundingSection() {
               onClick={() => setExpanded(true)}
             >
               Read More
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M6 2v8M2 6h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           )}
 
           <div className={`${styles.expandable} ${expanded ? styles.expanded : ""}`}>
-            <blockquote className={styles.quote}>
-              At HMD, we hold a simple yet nuanced creed: <em>Medicina, via pristina</em> — the
-              pristine path of medicine.
-            </blockquote>
-
             <p className={styles.body}>
-              It reflects our belief that holistic, well-grounded training,
-              informed by data and guided by clinical excellence, should guide every decision in healthcare.
-              The ultimate goal is to develop vertically integrated physician leaders
-              capable of shaping patient care across hospitals, health systems, and
-              institutions.
+              Through the <strong>HMD MD Adjunct Program</strong>, the HMD Residency Adjunct Program,
+              and the <strong>Physician Executive Pathway</strong>, we integrate rigorous clinical
+              training with structured education in business administration, public health and policy,
+              and health informatics and artificial intelligence. This integrated model develops
+              physicians who are clinically excellent, system-literate, and prepared to lead with
+              evidence-based precision and ethical conviction. Our academic rigor is aligned with
+              real-world governance to ensure graduates enter practice and leadership with{" "}
+              <strong>competence, credibility, and strategic clarity.</strong>
             </p>
 
             <button
