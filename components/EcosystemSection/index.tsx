@@ -70,7 +70,7 @@ const ecosystem = [
         desc: "Curated medical insights delivered to your inbox",
       },
       {
-        name: "HMD Journal Club",
+        name: "HMD Journal Club & Research",
         desc: "Peer-reviewed literature discussions, evidence analyses, and research collaborations",
       },
       {

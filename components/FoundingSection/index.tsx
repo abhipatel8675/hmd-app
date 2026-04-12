@@ -85,7 +85,7 @@ export default function FoundingSection() {
           <div className={styles.imageBlock}>
             <Image
               src="/hmd-journal-club.jpg"
-              alt="HMD Journal Club"
+              alt="HMD Journal Club & Research"
               fill
               className={styles.journalPhoto}
               sizes="(max-width: 900px) 100vw, 50vw"

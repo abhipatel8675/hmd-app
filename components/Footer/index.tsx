@@ -6,7 +6,7 @@ const resources = [
   "MedDigest Newsletter",
   "HMD Articles",
   "iQBank Step 2 CK",
-  "HMD Journal Club",
+  "HMD Journal Club & Research",
   "HMD Evidence Summary",
   "Media (YouTube, Podcast)",
   "OracleMD",
