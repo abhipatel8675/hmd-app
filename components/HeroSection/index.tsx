@@ -51,7 +51,7 @@ export default function HeroSection() {
           <div className={styles.statLabel}>Integrated Program</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statNum}>4<span>°</span></div>
+          <div className={styles.statNum}>4</div>
           <div className={styles.statLabel}>MD · BA · PH · HI</div>
         </div>
         <div className={styles.stat}>
