@@ -78,6 +78,46 @@
   opacity: 0.6;
 }
 
+/* ── Nav Item (relative for dropdown) ── */
+.navItem {
+  position: relative;
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(15, 30, 60, 0.97);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 8px 0;
+  z-index: 200;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ivory);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItem:hover {
+  background: rgba(201,168,76,0.1);
+  color: var(--gold-light);
+}
+
 .signIn {
   flex-shrink: 0;
   font-family: var(--font-cinzel), serif;
