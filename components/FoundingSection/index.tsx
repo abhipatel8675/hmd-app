@@ -48,7 +48,7 @@ export default function FoundingSection() {
           )}
 
           <div className={`${styles.expandable} ${expanded ? styles.expanded : ""}`}>
-            <p className={styles.body}>
+            <p className={`${styles.body} ${styles.bodyAccent}`}>
               Through the <strong>HMD MD Adjunct Program</strong>, the HMD Residency Adjunct Program,
               and the <strong>Physician Executive Pathway</strong>, we integrate rigorous clinical
               training with structured education in business administration, public health and policy,

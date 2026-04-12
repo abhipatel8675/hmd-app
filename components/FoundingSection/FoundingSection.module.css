@@ -107,6 +107,12 @@
   margin-bottom: 28px;
 }
 
+.bodyAccent {
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+  margin-left: 0;
+}
+
 /* ── Expandable section ── */
 .expandable {
   max-height: 0;
