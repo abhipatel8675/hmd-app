@@ -7,9 +7,9 @@ const leftItems = [
 ];
 
 const rightItems = [
-  { name: "Business Administration (MBA)", desc: "Leadership, management, and strategy for efficient healthcare operations" },
-  { name: "Public Health And Policy (MPH)", desc: "Population health promotion, and a strong grasp on health policy" },
-  { name: "Health Informatics (MHI)", desc: "Technology, data, and digital systems that optimize clinical care" },
+  { name: "Business Administration (BA)", desc: "Leadership, management, and strategy for efficient healthcare operations" },
+  { name: "Public Health And Policy (PH)", desc: "Population health promotion, and a strong grasp on health policy" },
+  { name: "Health Informatics (HI)", desc: "Technology, data, and digital systems that optimize clinical care" },
 ];
 
 function CurriculumColumn({ items }: { items: typeof leftItems }) {
