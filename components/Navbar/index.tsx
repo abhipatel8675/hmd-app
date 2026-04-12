@@ -29,7 +29,6 @@ const navLinks = [
     ],
   },
   { label: "iConnect", dropdown: null },
-  { label: "Paid Developer", dropdown: null },
 ];
 
 export default function Navbar() {
