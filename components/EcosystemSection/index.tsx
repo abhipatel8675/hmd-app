@@ -101,7 +101,7 @@ export default function EcosystemSection() {
           </h2>
           <p className={styles.subtitle}>
             From enrollment to executive leadership — discover how our programs,
-            platforms, and resources work together to shape your career.
+            platforms, and resources work together to shape your career in the 21st-century medicine.
           </p>
         </div>
 
