@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./FoundingSection.module.css";
 
 export default function FoundingSection() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section className={styles.wrap}>
       <div className={styles.inner}>
@@ -26,19 +31,45 @@ export default function FoundingSection() {
           <p className={styles.body}>
             The practice of medicine stands at a historic inflection point. Twenty-first-century
             physicians must lead not only individual patients, but systems and institutions.
-          </p>
-          <p className={styles.body}>
-            At HMD, we hold a simple yet nuanced creed: <em>Medicine, via pristina</em> — the
-            pristine path of medicine. It reflects our belief that holistic, well-grounded training,
-            informed by data and guided by clinical excellence, should push every decision in healthcare.
+            {!expanded && " ..."}
           </p>
 
-          <a href="#" className={styles.readMore}>
-            Read More
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M1.5 6H10.5M7 2.5L10.5 6L7 9.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
+          {!expanded && (
+            <button
+              className={styles.readMore}
+              onClick={() => setExpanded(true)}
+            >
+              Read More
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 2v8M2 6h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              </svg>
+            </button>
+          )}
+
+          <div className={`${styles.expandable} ${expanded ? styles.expanded : ""}`}>
+            <blockquote className={styles.quote}>
+              At HMD, we hold a simple yet nuanced creed: <em>Medicina, via pristina</em> — the
+              pristine path of medicine.
+            </blockquote>
+
+            <p className={styles.body}>
+              It reflects our belief that holistic, well-grounded training,
+              informed by data and guided by clinical excellence, should guide every decision in healthcare.
+              The ultimate goal is to develop vertically integrated physician leaders
+              capable of shaping patient care across hospitals, health systems, and
+              institutions.
+            </p>
+
+            <button
+              className={styles.readMore}
+              onClick={() => setExpanded(false)}
+            >
+              Read Less
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* RIGHT */}
