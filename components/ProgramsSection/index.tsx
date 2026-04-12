@@ -33,7 +33,7 @@ export default function ProgramsSection() {
     <section className={styles.wrap}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <div className={styles.overline}>Our Programmes</div>
+          <div className={styles.overline}>Our Programs</div>
           <h2 className={styles.title}>Physician Pathways Designed for Excellence</h2>
         </div>
 

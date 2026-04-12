@@ -24,7 +24,7 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.programmeLabel}>
-            MD · MBA · MPH · MHI &nbsp;|&nbsp; 7-Year Integrated Programme
+            MD · BA · PH · HI &nbsp;|&nbsp; 4 - 3-Year Integrated Program
           </div>
 
           <div className={styles.ctas}>
@@ -47,12 +47,12 @@ export default function HeroSection() {
       {/* Stat Strip */}
       <div className={styles.statStrip}>
         <div className={styles.stat}>
-          <div className={styles.statNum}>7<span>yr</span></div>
-          <div className={styles.statLabel}>Integrated Programme</div>
+          <div className={styles.statNum}>4 & 3<span>yr</span></div>
+          <div className={styles.statLabel}>Integrated Program</div>
         </div>
         <div className={styles.stat}>
           <div className={styles.statNum}>4<span>°</span></div>
-          <div className={styles.statLabel}>MD · MBA · MPH · MHI</div>
+          <div className={styles.statLabel}>MD · BA · PH · HI</div>
         </div>
         <div className={styles.stat}>
           <div className={styles.statNum}>100<span>%</span></div>

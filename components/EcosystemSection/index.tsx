@@ -19,7 +19,7 @@ const ecosystem = [
       },
       {
         name: "Physician Executive Pathway",
-        desc: "7-year integrated MD + MBA + MPH + MHI for C-suite leaders",
+        desc: "4 & 3-year integrated MD + BA + PH + HI for C-suite leaders",
       },
       {
         name: "Residency Adjunct Program",

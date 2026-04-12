@@ -27,7 +27,7 @@ const cinzel = Cinzel({
 export const metadata: Metadata = {
   title: "HMD – Physician Executive Pathway",
   description:
-    "MD · MBA · MPH · MHI — a 7-year integrated programme designed for the C-suite from day one.",
+    "MD · BA · PH · HI — a 4 & 3-year integrated program designed for the C-suite from day one.",
 };
 
 export default function RootLayout({
