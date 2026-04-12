@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import EcosystemSection from "@/components/EcosystemSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import FoundingSection from "@/components/FoundingSection";
+import CreedSection from "@/components/CreedSection";
 import IConnectSection from "@/components/iConnectSection";
 import CurriculumSection from "@/components/CurriculumSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -19,6 +20,7 @@ export default function Home() {
         <EcosystemSection />
         <ProgramsSection />
         <FoundingSection />
+        <CreedSection />
         <IConnectSection />
         <CurriculumSection />
         <NewsletterSection />
