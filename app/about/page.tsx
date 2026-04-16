@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import {
   executiveBoard,
   physicianLeaders,
+  advisoryBoard,
 } from "@/lib/team-data";
 import styles from "./about.module.css";
 
@@ -48,19 +49,6 @@ const coreValues = [
     letter: "L",
     title: "Eagerness to learn and share",
     text: "We embrace continual self-improvement and actively uplift others by sharing knowledge, insights, and opportunities.",
-  },
-];
-
-const advisoryBoard = [
-  {
-    name: "Howard Maibach, M.D., FAAD",
-    role: "Advisory Board Member, HMD",
-    image: "/Howard Maibach.jpeg",
-  },
-  {
-    name: "Tamesh Sivaguru",
-    role: "Technical Board Advisor, HMD",
-    image: "/Tamesh Sivaguru.jpeg",
   },
 ];
 
@@ -114,7 +102,7 @@ export default function AboutPage() {
               <p className={styles.mvText}>
                 To decentralize Ivy-level medical education and promote health
                 awareness through the teaching of elite medical knowledge globally.
-                We uphold the letter and spirit of Medicine, <em>via pristina</em>— the pristine
+                We uphold the letter and spirit of <strong><em>Medicine</em></strong>, <em>via pristina</em>— the pristine
                 path of medicine.
               </p>
             </div>
@@ -171,11 +159,22 @@ export default function AboutPage() {
             </h2>
             <div className={styles.peopleGridThree}>
               {advisoryBoard.map((p) => (
-                <div key={p.name} className={styles.personCard}>
+                <Link
+                  key={p.slug}
+                  href={`/about/team/${p.slug}`}
+                  className={styles.personCardLink}
+                >
                   <div className={styles.personAvatar}>
                     {p.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.image} alt={p.name} />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        style={{
+                          ...(p.imagePosition && { objectPosition: p.imagePosition }),
+                          ...(p.imageScale && { transform: `scale(${p.imageScale})` }),
+                        }}
+                      />
                     ) : (
                       <span className={styles.avatarPlaceholder}>
                         {p.name.charAt(0)}
@@ -184,7 +183,7 @@ export default function AboutPage() {
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

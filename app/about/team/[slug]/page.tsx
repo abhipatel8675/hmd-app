@@ -49,6 +49,8 @@ export default async function ProfilePage({
               <span className={styles.categoryBadge}>
                 {member.category === "executive"
                   ? "Executive Board"
+                  : member.category === "advisory"
+                  ? "Advisory Board"
                   : "Physician Leader"}
               </span>
             </div>

@@ -2,7 +2,7 @@ export interface TeamMember {
   name: string;
   role: string;
   slug: string;
-  category: "executive" | "physician";
+  category: "executive" | "physician" | "advisory";
   bio: string[];
   image?: string;
   imagePosition?: string;
@@ -111,7 +111,39 @@ export const physicianLeaders: TeamMember[] = [
   },
 ];
 
+export const advisoryBoard: TeamMember[] = [
+  {
+    name: "Howard Maibach, M.D., FAAD",
+    role: "Advisory Board Member, HMD",
+    slug: "howard-maibach",
+    category: "advisory",
+    bio: [],
+    image: "/Howard Maibach.jpeg",
+  },
+  {
+    name: "Tamesh Sivaguru",
+    role: "Technical Board Advisor, HMD",
+    slug: "tamesh-sivaguru",
+    category: "advisory",
+    bio: [],
+    image: "/Tamesh Sivaguru.jpeg",
+  },
+  {
+    name: "Andy Barbeau, Ph.D., MBA",
+    role: "Chief Operating Officer, HMD",
+    slug: "andy-barbeau",
+    category: "advisory",
+    image: "/Andy Barbeau,Ph.D, MBA.png",
+    bio: [
+      "Dr. Barbeau is HMD\u2019s COO providing strategic and operational leadership in managerial & organizational design, alignment, execution, growth, change, and governance. He is a seasoned consultant, researcher, author, professor, and Founder/CEO of MOReLLC.com; a global consultancy passionate about offering entirely new, systems-based ways of understanding management and organization that heal and align all employees to improve customer and enterprise outcomes.",
+      "Taking a systems view on the current state of the world, he asks; Is this the best we can do? He now offers solutions and provides a source of hope and healing by helping leaders see the connection between workplace health and overall performance. He is dedicated to bringing these perspectives to life, help solve the global employee engagement problem, and improve overall human experiences all while driving better organizational performance.",
+      "His extensive career in consulting has given him deep insights from multiple industries that align well with HMD\u2019s core mission. These include CVS Health, Moderna, AHIMA, Harvard University, Houghton Mifflin, Wolters Kluwer, and several others. He will leverage his extensive background and passion to ensure core operational integrity for HMD while also contributing to HMD\u2019s mission to improve healthcare outcomes via improved operating models.",
+    ],
+  },
+];
+
 export const allTeamMembers: TeamMember[] = [
   ...executiveBoard,
   ...physicianLeaders,
+  ...advisoryBoard,
 ];
