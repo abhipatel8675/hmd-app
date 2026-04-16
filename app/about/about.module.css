@@ -1,4 +1,26 @@
 /* ── Hero Section ── */
+@keyframes heroRiseIn {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroAccentIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 .hero {
   position: relative;
   padding: 160px 48px 100px;
@@ -22,6 +44,31 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+.hero .overline,
+.heroTitle,
+.heroAccent,
+.heroDesc {
+  opacity: 0;
+  animation: heroRiseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero .overline {
+  animation-delay: 0.1s;
+}
+
+.heroTitle {
+  animation-delay: 0.25s;
+}
+
+.heroAccent {
+  animation: heroAccentIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+  transform-origin: left center;
+}
+
+.heroDesc {
+  animation-delay: 0.7s;
 }
 
 .overline {
