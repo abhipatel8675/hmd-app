@@ -38,7 +38,7 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: #8B2E2E;
+  background: transparent;
   border: 2px solid rgba(201,168,76,0.35);
   display: flex;
   align-items: center;

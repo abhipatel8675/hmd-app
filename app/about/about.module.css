@@ -287,13 +287,13 @@
   align-items: center;
   text-align: center;
   flex: 0 0 calc(25% - 24px);
-  max-width: 260px;
+  max-width: 320px;
 }
 
 .peopleGridThree .personCard,
 .peopleGridThree .personCardLink {
   flex: 0 0 calc(33.333% - 24px);
-  max-width: 300px;
+  max-width: 360px;
 }
 
 .personCardLink {
@@ -307,7 +307,7 @@
   align-items: center;
   text-align: center;
   flex: 0 0 calc(25% - 24px);
-  max-width: 260px;
+  max-width: 320px;
 }
 
 .personCardLink:hover {
@@ -319,15 +319,15 @@
 }
 
 .personAvatar {
-  width: 200px;
-  height: 200px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: #8B2E2E;
+  background: transparent;
   border: 3px solid var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   overflow: hidden;
   transition: border-color 0.2s;
 }
@@ -413,8 +413,8 @@
     flex: 0 0 calc(50% - 24px);
   }
   .personAvatar {
-    width: 170px;
-    height: 170px;
+    width: 220px;
+    height: 220px;
   }
 }
 

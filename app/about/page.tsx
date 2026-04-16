@@ -57,6 +57,11 @@ const advisoryBoard = [
     role: "Advisory Board Member, HMD",
     image: "/Howard Maibach.jpeg",
   },
+  {
+    name: "Tamesh Sivaguru",
+    role: "Technical Board Advisor, HMD",
+    image: "/Tamesh Sivaguru.jpeg",
+  },
 ];
 
 const ambassadors = [
@@ -73,6 +78,7 @@ const ambassadors = [
   {
     name: "Praise Emmanuel, MD Candidate",
     role: "HMD Ambassador, Southern Europe",
+    image: "/Praise Emmanuel, MD Candidate.jpeg",
   },
 ];
 

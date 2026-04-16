@@ -49,6 +49,7 @@ export const executiveBoard: TeamMember[] = [
     role: "Strategic Advisor For Medical AI & UK Programs, HMD",
     slug: "karthik-saravanan",
     category: "executive",
+    image: "/Karthik Saravanan, BMBCh Bound, BA(Oxon).jpeg",
     bio: [
       "Karthik Saravanan, a final year medical student at the University of Oxford, is the strategic advisor for medical AI and UK programs for HMD. With his passion for medical education, teaching and machine learning, he employs his multi-faceted skill set across many different areas.",
       "What initially began as a self-taught interest during the COVID pandemic, Karthik has developed a strong programming background with Python over the past six years, undertaking many projects relating to data science and machine learning. As a research intern at the Botnar Institute, Oxford, a number of his projects have been published in scientific journals and presented at national/international scientific meetings. Most notably, his recent project involving the implementation of a dynamical graph based post-processing algorithm was published as a conference paper at IEEE International Symposium of Biomedical Imaging 2025.",
@@ -95,6 +96,7 @@ export const physicianLeaders: TeamMember[] = [
     role: "Consultant Anesthesiologist | Research And Evidence-Based Medicine Contributor, HMD",
     slug: "sadia-ambreen",
     category: "physician",
+    image: "/Sadia Amebreen, MBBS, FCPS.jpeg",
     bio: [
       "Dr. Sadia Ambreen is a consultant anesthesiologist and a fellow of the College of Physicians and Surgeons Pakistan (FCPS) in anesthesia and intensive care. She is currently practicing at Social Security Hospital, Lahore, Pakistan, where she is actively involved in perioperative care and critical care medicine. She completed her MBBS (Bachelor of Medicine, Bachelor of Surgery) from Quaid-e-Azam Medical College, followed by residency training in anesthesiology. She later obtained her fellowship in anesthesia and intensive care from the College of Physicians and Surgeons Pakistan (CPSP), reflecting her advanced specialization in the perioperative medicine and critical care.",
       "Dr. Ambreen has completed advanced professional training through the College of Physicians and Surgeons Pakistan in research methodology, communication skills, medical ethics, and information technology, strengthening her clinical, academic, and interdisciplinary competencies. With over 1.5 years of experience in medical research and evidence synthesis, she has contributed to international research collaborations, including working with Netherlands-based health and nutrition companies such as Probiogurt and YMProof. Her work has focused on critical appraisal and evidence-based analysis and clinical data.",
