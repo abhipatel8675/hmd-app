@@ -210,7 +210,14 @@ export default function AboutPage() {
                   <div className={styles.personAvatar}>
                     {p.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.image} alt={p.name} />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        style={{
+                          ...(p.imagePosition && { objectPosition: p.imagePosition }),
+                          ...(p.imageScale && { transform: `scale(${p.imageScale})` }),
+                        }}
+                      />
                     ) : (
                       <span className={styles.avatarPlaceholder}>
                         {p.name.charAt(0)}
@@ -234,7 +241,14 @@ export default function AboutPage() {
                   <div className={styles.personAvatar}>
                     {p.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.image} alt={p.name} />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        style={{
+                          ...(p.imagePosition && { objectPosition: p.imagePosition }),
+                          ...(p.imageScale && { transform: `scale(${p.imageScale})` }),
+                        }}
+                      />
                     ) : (
                       <span className={styles.avatarPlaceholder}>
                         {p.name.charAt(0)}

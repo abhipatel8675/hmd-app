@@ -32,7 +32,14 @@ export default async function ProfilePage({
               <div className={styles.avatarLarge}>
                 {member.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={member.image} alt={member.name} />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    style={{
+                      ...(member.imagePosition && { objectPosition: member.imagePosition }),
+                      ...(member.imageScale && { transform: `scale(${member.imageScale})` }),
+                    }}
+                  />
                 ) : (
                   <span className={styles.avatarInitial}>
                     {member.name.charAt(0)}

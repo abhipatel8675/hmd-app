@@ -5,6 +5,8 @@ export interface TeamMember {
   category: "executive" | "physician";
   bio: string[];
   image?: string;
+  imagePosition?: string;
+  imageScale?: number;
 }
 
 export const executiveBoard: TeamMember[] = [
@@ -35,7 +37,7 @@ export const executiveBoard: TeamMember[] = [
     role: "Chief Data Scientist, HMD",
     slug: "helena-peic-tukuljac",
     category: "executive",
-    image: "/Helena Peic Tukuljac, Ph.D, MSc.jpeg",
+    image: "/Helena Peic Tukuljac , Ph.D, MSc.jpeg",
     bio: [
       "Helena Pei\u0107 Tukuljac is a senior data and healthcare innovation leader with over a decade of international experience across academia, startups, and large-scale enterprise environments. Guided by a mindset of resilience and adaptability, she builds data-driven solutions with a clear focus on real-world impact, always letting evidence, users, state-of-the-art solutions and the market shape outcomes.",
       "Based in Switzerland for more than ten years, Helena has also worked professionally in Serbia, France, and the United States. She brings a rare hybrid professional background, combining a PhD in Data Science with an MSc in Embedded Systems, enabling her to bridge advanced mathematics, software engineering, and strategic business problem-solving. This combination allows her to design and deliver scalable, production-ready data and AI systems that create measurable value.",
@@ -50,6 +52,7 @@ export const executiveBoard: TeamMember[] = [
     slug: "karthik-saravanan",
     category: "executive",
     image: "/Karthik Saravanan, BMBCh Bound, BA(Oxon).jpeg",
+    imagePosition: "center 60%",
     bio: [
       "Karthik Saravanan, a final year medical student at the University of Oxford, is the strategic advisor for medical AI and UK programs for HMD. With his passion for medical education, teaching and machine learning, he employs his multi-faceted skill set across many different areas.",
       "What initially began as a self-taught interest during the COVID pandemic, Karthik has developed a strong programming background with Python over the past six years, undertaking many projects relating to data science and machine learning. As a research intern at the Botnar Institute, Oxford, a number of his projects have been published in scientific journals and presented at national/international scientific meetings. Most notably, his recent project involving the implementation of a dynamical graph based post-processing algorithm was published as a conference paper at IEEE International Symposium of Biomedical Imaging 2025.",
@@ -82,6 +85,8 @@ export const physicianLeaders: TeamMember[] = [
     category: "physician",
     bio: [],
     image: "/Tsion Yehualashet Wubshet, M.D.jpeg",
+    imageScale: 1.25,
+    imagePosition: "center 35%",
   },
   {
     name: "Chidinma Nwoha, MD, MPH",
@@ -90,6 +95,7 @@ export const physicianLeaders: TeamMember[] = [
     category: "physician",
     bio: [],
     image: "/Chidinma Nwoha, MD, MPH.jpeg",
+    imagePosition: "center 30%",
   },
   {
     name: "Sadia Ambreen, MBBS, FCPS",
