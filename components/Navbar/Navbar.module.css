@@ -28,14 +28,9 @@
 }
 
 .logo {
-  background: var(--navy-mid);
-  border: 1px solid rgba(201,168,76,0.3);
-  color: var(--gold);
-  font-family: var(--font-cinzel), serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  padding: 6px 10px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .tagline {

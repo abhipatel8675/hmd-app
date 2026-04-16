@@ -33,7 +33,7 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brandCol}>
             <div className={styles.logo}>
-              <img src="/hmd-logo.png" alt="HMD" className={styles.logoImg} />
+              <img src="/HMD Logo (No Motto) Ed.png" alt="HMD" className={styles.logoImg} />
               <span className={styles.logoTagline}>Medicine, via pristina</span>
             </div>
             <p className={styles.brandDesc}>

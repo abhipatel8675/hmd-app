@@ -42,7 +42,7 @@ export default function Navbar() {
     >
       <div className={styles.inner}>
         <a href="/" className={styles.brand}>
-          <img src="/hmd-logo.png" alt="HMD" className={styles.logo} />
+          <img src="/HMD Logo (No Motto) Ed.png" alt="HMD" className={styles.logo} />
           <span className={styles.tagline}>Medicine, via pristina</span>
         </a>
 

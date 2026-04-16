@@ -1,6 +1,11 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
+import {
+  executiveBoard,
+  physicianLeaders,
+} from "@/lib/team-data";
 import styles from "./about.module.css";
 
 const coreValues = [
@@ -50,44 +55,7 @@ const advisoryBoard = [
   {
     name: "Howard Maibach, M.D., FAAD",
     role: "Advisory Board Member, HMD",
-  },
-];
-
-const executiveBoard = [
-  {
-    name: "Bakary Jatta, M.D.",
-    role: "Chair & Founder, HMD",
-  },
-  {
-    name: "Vanessa Nunes De Paiva, MBA, Ph.D.",
-    role: "Chief Physician Liaison, HMD",
-  },
-  {
-    name: "Helena Pei\u0107 Tukuljac, Ph.D, MSc",
-    role: "Chief Data Scientist, HMD",
-  },
-  {
-    name: "Karthik Saravanan, BMBCh Bound, BA (Oxon)",
-    role: "Strategic Advisor For Medical AI & UK Programs, HMD",
-  },
-  {
-    name: "Janet Machuka",
-    role: "Head of Digital Strategy and Communications, HMD",
-  },
-];
-
-const physicianLeaders = [
-  {
-    name: "Tsion Yehualashet Wubshet, M.D.",
-    role: "HMD Regional Executive, East Africa",
-  },
-  {
-    name: "Chidinma Nwoha, MD, MPH",
-    role: "HMD Regional Executive, West Africa",
-  },
-  {
-    name: "Sadia Ambreen, MBBS, FCPS",
-    role: "Consultant Anesthesiologist | Research And Evidence-Based Medicine Contributor, HMD",
+    image: "/Howard Maibach.jpeg",
   },
 ];
 
@@ -95,10 +63,12 @@ const ambassadors = [
   {
     name: "Fahmida Zahin, MBBS Candidate",
     role: "HMD Ambassador, United Kingdom",
+    image: "/Fahmida Zahin, MBBS Candidate.jpeg",
   },
   {
     name: "Melody Olajide, MBBS Candidate",
     role: "HMD Ambassador, West Africa",
+    image: "/Melody Olajide, MMBS Candidate.jpeg",
   },
   {
     name: "Praise Emmanuel, MD Candidate",
@@ -197,9 +167,14 @@ export default function AboutPage() {
               {advisoryBoard.map((p) => (
                 <div key={p.name} className={styles.personCard}>
                   <div className={styles.personAvatar}>
-                    <span className={styles.avatarPlaceholder}>
-                      {p.name.charAt(0)}
-                    </span>
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={p.image} alt={p.name} />
+                    ) : (
+                      <span className={styles.avatarPlaceholder}>
+                        {p.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
@@ -221,30 +196,48 @@ export default function AboutPage() {
             <h3 className={styles.subCategory}>Executive Board</h3>
             <div className={styles.peopleGrid}>
               {executiveBoard.map((p) => (
-                <div key={p.name} className={styles.personCard}>
+                <Link
+                  key={p.slug}
+                  href={`/about/team/${p.slug}`}
+                  className={styles.personCardLink}
+                >
                   <div className={styles.personAvatar}>
-                    <span className={styles.avatarPlaceholder}>
-                      {p.name.charAt(0)}
-                    </span>
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={p.image} alt={p.name} />
+                    ) : (
+                      <span className={styles.avatarPlaceholder}>
+                        {p.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
-                </div>
+                </Link>
               ))}
             </div>
 
             <h3 className={styles.subCategory}>Physician Leaders</h3>
             <div className={styles.peopleGridThree}>
               {physicianLeaders.map((p) => (
-                <div key={p.name} className={styles.personCard}>
+                <Link
+                  key={p.slug}
+                  href={`/about/team/${p.slug}`}
+                  className={styles.personCardLink}
+                >
                   <div className={styles.personAvatar}>
-                    <span className={styles.avatarPlaceholder}>
-                      {p.name.charAt(0)}
-                    </span>
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={p.image} alt={p.name} />
+                    ) : (
+                      <span className={styles.avatarPlaceholder}>
+                        {p.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -261,9 +254,14 @@ export default function AboutPage() {
               {ambassadors.map((p) => (
                 <div key={p.name} className={styles.personCard}>
                   <div className={styles.personAvatar}>
-                    <span className={styles.avatarPlaceholder}>
-                      {p.name.charAt(0)}
-                    </span>
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={p.image} alt={p.name} />
+                    ) : (
+                      <span className={styles.avatarPlaceholder}>
+                        {p.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
