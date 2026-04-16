@@ -29,6 +29,7 @@ const navLinks = [
     ],
   },
   { label: "iConnect", dropdown: null },
+  { label: "About", dropdown: null, href: "/about" },
 ];
 
 export default function Navbar() {
@@ -40,8 +41,8 @@ export default function Navbar() {
       onMouseLeave={() => setOpenMenu(null)}
     >
       <div className={styles.inner}>
-        <a href="#" className={styles.brand}>
-          <div className={styles.logo}>HMD</div>
+        <a href="/" className={styles.brand}>
+          <img src="/hmd-logo.png" alt="HMD" className={styles.logo} />
           <span className={styles.tagline}>Medicine, via pristina</span>
         </a>
 
@@ -52,7 +53,7 @@ export default function Navbar() {
               className={styles.navItem}
               onMouseEnter={() => link.dropdown ? setOpenMenu(link.label) : setOpenMenu(null)}
             >
-              <a href="#">
+              <a href={link.href || "#"}>
                 {link.label}
                 {link.dropdown && <span className={styles.chevron}> ▾</span>}
               </a>

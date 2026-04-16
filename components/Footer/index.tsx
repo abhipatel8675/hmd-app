@@ -1,6 +1,10 @@
 import styles from "./Footer.module.css";
 
-const quickLinks = ["About HMD", "Contact Us", "Online Store"];
+const quickLinks = [
+  { label: "About HMD", href: "/about" },
+  { label: "Contact Us", href: "#" },
+  { label: "Online Store", href: "#" },
+];
 
 const resources = [
   "MedDigest Newsletter",
@@ -29,7 +33,7 @@ export default function Footer() {
           {/* Brand */}
           <div className={styles.brandCol}>
             <div className={styles.logo}>
-              <div className={styles.logoBox}>HMD</div>
+              <img src="/hmd-logo.png" alt="HMD" className={styles.logoImg} />
               <span className={styles.logoTagline}>Medicine, via pristina</span>
             </div>
             <p className={styles.brandDesc}>
@@ -48,7 +52,7 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Quick Links</h4>
             <ul className={styles.colLinks}>
               {quickLinks.map((l) => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l.label}><a href={l.href}>{l.label}</a></li>
               ))}
             </ul>
           </div>
