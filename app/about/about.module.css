@@ -194,19 +194,32 @@
 }
 
 .cvHeader {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 64px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  margin-bottom: 72px;
+}
+
+.cvHeader .overline {
+  justify-content: center;
+}
+
+.cvHeader .overline::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
 }
 
 .cvTitle {
   font-family: var(--font-cormorant), serif;
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 300;
   line-height: 1.15;
   color: var(--ivory);
+  margin: 0;
 }
 
 .cvTitle em {
@@ -214,13 +227,22 @@
   color: var(--gold);
 }
 
+.cvTitle::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--gold);
+  margin: 24px auto 0;
+}
+
 .cvDesc {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--text-dim);
-  max-width: 420px;
-  margin-left: auto;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .valuesGrid {
@@ -515,11 +537,8 @@
     padding: 72px 24px;
   }
   .cvHeader {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .cvDesc {
-    margin-left: 0;
+    gap: 20px;
+    margin-bottom: 48px;
   }
   .sectionTitle,
   .mvTitle {

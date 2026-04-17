@@ -24,6 +24,7 @@ export const executiveBoard: TeamMember[] = [
     slug: "vanessa-nunes-de-paiva",
     category: "executive",
     image: "/Vanessa Nunes Depaiva, MBA, Ph. D..jpeg",
+    imagePosition: "50% 20%",
     bio: [
       "Vanessa Nunes de Paiva is an accomplished Medical Science Liaison whose career reflects a steadfast commitment to scientific excellence, patient-centered engagement, and cross-functional collaboration. With a strong foundation in medical sciences and extensive field experience, she has built a reputation for delivering high-impact scientific exchange, strengthening strategic partnerships, and advancing healthcare solutions for complex and underserved patient populations.",
       "She is from Brazil and she did her master degree in science in Immunology in Brazil, her Ph.D. in Neuroimmunology in Germany. She did a postdoc program at Florida International University in Neuroscience, and a second postdoc in Immuno-Oncology at University of Miami, and recently graduated with her MBA in Marketing.",
@@ -51,8 +52,8 @@ export const executiveBoard: TeamMember[] = [
     role: "Strategic Advisor For Medical AI & UK Programs, HMD",
     slug: "karthik-saravanan",
     category: "executive",
-    image: "/Karthik Saravanan, BMBCh Bound, BA(Oxon).jpeg",
-    imagePosition: "center 60%",
+    image: "/Karthik Saravanan, BMBCh Bound, BA.jpeg",
+    imagePosition: "center 55%",
     bio: [
       "Karthik Saravanan, a final year medical student at the University of Oxford, is the strategic advisor for medical AI and UK programs for HMD. With his passion for medical education, teaching and machine learning, he employs his multi-faceted skill set across many different areas.",
       "What initially began as a self-taught interest during the COVID pandemic, Karthik has developed a strong programming background with Python over the past six years, undertaking many projects relating to data science and machine learning. As a research intern at the Botnar Institute, Oxford, a number of his projects have been published in scientific journals and presented at national/international scientific meetings. Most notably, his recent project involving the implementation of a dynamical graph based post-processing algorithm was published as a conference paper at IEEE International Symposium of Biomedical Imaging 2025.",
@@ -66,7 +67,9 @@ export const executiveBoard: TeamMember[] = [
     role: "Head of Digital Strategy and Communications, HMD",
     slug: "janet-machuka",
     category: "executive",
-    image: "/Janet Machuka.jpeg",
+    image: "/Machuka copy.jpg",
+    imageScale: 1.2,
+    imagePosition: "center 20%",
     bio: [
       "Janet Machuka is the Head of Digital Strategy and Communications at HMD, where she leads the organization\u2019s global digital positioning, brand architecture, and strategic communications initiatives. She oversees digital growth strategy, audience engagement, media partnerships, and thought leadership distribution, ensuring HMD\u2019s mission at the intersection of medicine, leadership, and innovation reaches a global audience.",
       "A trained journalist and accomplished Corporate Digital Marketing and Communications Strategist, Janet is widely recognized as one of Africa\u2019s leading voices in digital marketing. She brings extensive experience in digital strategy, corporate communications, content development, brand positioning, and executive training, advising organizations on how to build influential, purpose-driven brands in an evolving digital landscape.",
@@ -85,8 +88,8 @@ export const physicianLeaders: TeamMember[] = [
     category: "physician",
     bio: [],
     image: "/Tsion Yehualashet Wubshet, M.D.jpeg",
-    imageScale: 1.25,
-    imagePosition: "center 35%",
+    imageScale: 1.8,
+    imagePosition: "75% 15%",
   },
   {
     name: "Chidinma Nwoha, MD, MPH",
@@ -127,6 +130,7 @@ export const advisoryBoard: TeamMember[] = [
     category: "advisory",
     bio: [],
     image: "/Tamesh Sivaguru.jpeg",
+    imagePosition: "center 85%",
   },
   {
     name: "Andy Barbeau, Ph.D., MBA",

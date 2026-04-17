@@ -78,7 +78,7 @@ export default function AboutPage() {
         {/* ── Hero ── */}
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <p className={styles.overline}>Healthcare Management & Development</p>
+            <p className={styles.overline}>Medicine, via pristina</p>
             <h1 className={styles.heroTitle}>
               About <em>HMD</em>
             </h1>
@@ -126,13 +126,10 @@ export default function AboutPage() {
         <section className={styles.coreValues}>
           <div className={styles.cvInner}>
             <div className={styles.cvHeader}>
-              <div>
-                <p className={styles.overline}>Our Core Values</p>
-                <h2 className={styles.cvTitle}>
-                  The Principles That<br />
-                  <em>Guide Our Work</em>
-                </h2>
-              </div>
+              <p className={styles.overline}>Our Core Values</p>
+              <h2 className={styles.cvTitle}>
+                The Principles That <em>Guide Our Work</em>
+              </h2>
               <p className={styles.cvDesc}>
                 Each value reflects the standard of excellence, ethics, and commitment
                 that defines HMD and its community of physician leaders.
