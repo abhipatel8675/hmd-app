@@ -68,8 +68,8 @@ export const executiveBoard: TeamMember[] = [
     slug: "janet-machuka",
     category: "executive",
     image: "/Machuka copy.jpg",
-    imageScale: 1.2,
-    imagePosition: "center 20%",
+    imageScale: 1,
+    imagePosition: "center 15%",
     bio: [
       "Janet Machuka is the Head of Digital Strategy and Communications at HMD, where she leads the organization\u2019s global digital positioning, brand architecture, and strategic communications initiatives. She oversees digital growth strategy, audience engagement, media partnerships, and thought leadership distribution, ensuring HMD\u2019s mission at the intersection of medicine, leadership, and innovation reaches a global audience.",
       "A trained journalist and accomplished Corporate Digital Marketing and Communications Strategist, Janet is widely recognized as one of Africa\u2019s leading voices in digital marketing. She brings extensive experience in digital strategy, corporate communications, content development, brand positioning, and executive training, advising organizations on how to build influential, purpose-driven brands in an evolving digital landscape.",
