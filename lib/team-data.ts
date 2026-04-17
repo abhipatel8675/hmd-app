@@ -130,7 +130,8 @@ export const advisoryBoard: TeamMember[] = [
     category: "advisory",
     bio: [],
     image: "/Tamesh Sivaguru.jpeg",
-    imagePosition: "center 85%",
+    imageScale: 1.4,
+    imagePosition: "center 40%",
   },
   {
     name: "Andy Barbeau, Ph.D., MBA",
