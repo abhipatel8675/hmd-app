@@ -81,6 +81,17 @@
   transform: translateY(-1px);
 }
 
+.archiveLink {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  text-decoration: none;
+  padding-top: 4px;
+  transition: color 0.15s, transform 0.15s;
+}
+.archiveLink:hover { color: var(--gold); transform: translateX(3px); }
+
 @media (max-width: 700px) {
   .wrap { padding: 72px 24px; }
   .title { font-size: 36px; }

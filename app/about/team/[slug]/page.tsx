@@ -51,6 +51,8 @@ export default async function ProfilePage({
                   ? "Executive Board"
                   : member.category === "advisory"
                   ? "Advisory Board"
+                  : member.category === "ambassador"
+                  ? "HMD Ambassador"
                   : "Physician Leader"}
               </span>
             </div>

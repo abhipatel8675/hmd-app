@@ -6,14 +6,14 @@ const quickLinks = [
   { label: "Online Store", href: "#" },
 ];
 
-const resources = [
-  "MedDigest Newsletter",
-  "HMD Articles",
-  "iQBank Step 2 CK",
-  "HMD Journal Club & Research",
-  "HMD Evidence Summary",
-  "Media (YouTube, Podcast)",
-  "OracleMD",
+const resources: { label: string; href: string }[] = [
+  { label: "MedDigest Newsletter", href: "/newsletter" },
+  { label: "HMD Articles", href: "/newsletter" },
+  { label: "iQBank Step 2 CK", href: "#" },
+  { label: "HMD Journal Club & Research", href: "#" },
+  { label: "HMD Evidence Summary", href: "#" },
+  { label: "Media (YouTube, Podcast)", href: "#" },
+  { label: "OracleMD", href: "#" },
 ];
 
 const programs = [
@@ -62,7 +62,7 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Resources</h4>
             <ul className={styles.colLinks}>
               {resources.map((r) => (
-                <li key={r}><a href="#">{r}</a></li>
+                <li key={r.label}><a href={r.href}>{r.label}</a></li>
               ))}
             </ul>
           </div>

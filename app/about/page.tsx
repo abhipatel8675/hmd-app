@@ -6,6 +6,7 @@ import {
   executiveBoard,
   physicianLeaders,
   advisoryBoard,
+  ambassadors,
 } from "@/lib/team-data";
 import styles from "./about.module.css";
 
@@ -49,24 +50,6 @@ const coreValues = [
     letter: "L",
     title: "Eagerness to learn and share",
     text: "We embrace continual self-improvement and actively uplift others by sharing knowledge, insights, and opportunities.",
-  },
-];
-
-const ambassadors = [
-  {
-    name: "Fahmida Zahin, MBBS Candidate",
-    role: "HMD Ambassador, United Kingdom",
-    image: "/Fahmida Zahin, MBBS Candidate.jpeg",
-  },
-  {
-    name: "Melody Olajide, MBBS Candidate",
-    role: "HMD Ambassador, West Africa",
-    image: "/Melody Olajide, MMBS Candidate.jpeg",
-  },
-  {
-    name: "Praise Emmanuel, MD Candidate",
-    role: "HMD Ambassador, Southern Europe",
-    image: "/Praise Emmanuel, MD Candidate.jpeg",
   },
 ];
 
@@ -147,12 +130,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── Advisory Board ── */}
+        {/* ── Advisory & Faculty Board ── */}
         <section className={styles.advisory}>
           <div className={styles.advisoryInner}>
-            <p className={styles.sectionLabel}>Advisory Board</p>
+            <p className={styles.sectionLabel}>Advisory & Faculty Board</p>
             <h2 className={styles.sectionTitle}>
-              HMD <em>Advisory Board</em>
+              HMD <em>Advisory & Faculty Board</em>
             </h2>
             <div className={styles.peopleGridThree}>
               {advisoryBoard.map((p) => (
@@ -268,11 +251,22 @@ export default function AboutPage() {
             </h2>
             <div className={styles.peopleGridThree}>
               {ambassadors.map((p) => (
-                <div key={p.name} className={styles.personCard}>
+                <Link
+                  key={p.slug}
+                  href={`/about/team/${p.slug}`}
+                  className={styles.personCardLink}
+                >
                   <div className={styles.personAvatar}>
                     {p.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.image} alt={p.name} />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        style={{
+                          ...(p.imagePosition && { objectPosition: p.imagePosition }),
+                          ...(p.imageScale && { transform: `scale(${p.imageScale})` }),
+                        }}
+                      />
                     ) : (
                       <span className={styles.avatarPlaceholder}>
                         {p.name.charAt(0)}
@@ -281,7 +275,7 @@ export default function AboutPage() {
                   </div>
                   <div className={styles.personName}>{p.name}</div>
                   <div className={styles.personRole}>{p.role}</div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

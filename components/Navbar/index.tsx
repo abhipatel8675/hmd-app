@@ -2,30 +2,37 @@
 import { useState } from "react";
 import styles from "./Navbar.module.css";
 
-const navLinks = [
+type DropdownItem = { label: string; href?: string };
+type NavLink = {
+  label: string;
+  dropdown: DropdownItem[] | null;
+  href?: string;
+};
+
+const navLinks: NavLink[] = [
   {
     label: "Programs",
     dropdown: [
-      "HMD MD Adjunct Program",
-      "HMD Residency Adjunct Program",
-      "HMD Physician Executive Pathway",
+      { label: "HMD MD Adjunct Program" },
+      { label: "HMD Residency Adjunct Program" },
+      { label: "HMD Physician Executive Pathway" },
     ],
   },
   {
     label: "Library",
     dropdown: [
-      "HMD Journal Club & Research",
-      "HMD Evidence Summary",
-      "HMD Articles",
-      "OracleMD",
+      { label: "HMD Journal Club & Research" },
+      { label: "HMD Evidence Summary" },
+      { label: "HMD Articles", href: "/newsletter" },
+      { label: "OracleMD" },
     ],
   },
   {
     label: "Resources",
     dropdown: [
-      "MedDigest Newsletter",
-      "iQBank Step 2 CK",
-      "Media (YouTube, Podcast)",
+      { label: "MedDigest Newsletter", href: "/newsletter" },
+      { label: "iQBank Step 2 CK" },
+      { label: "Media (YouTube, Podcast)" },
     ],
   },
   { label: "iConnect", dropdown: null },
@@ -60,8 +67,12 @@ export default function Navbar() {
               {link.dropdown && openMenu === link.label && (
                 <div className={styles.dropdown}>
                   {link.dropdown.map((item) => (
-                    <a key={item} href="#" className={styles.dropdownItem}>
-                      {item}
+                    <a
+                      key={item.label}
+                      href={item.href || "#"}
+                      className={styles.dropdownItem}
+                    >
+                      {item.label}
                     </a>
                   ))}
                 </div>

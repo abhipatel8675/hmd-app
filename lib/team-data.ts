@@ -2,7 +2,7 @@ export interface TeamMember {
   name: string;
   role: string;
   slug: string;
-  category: "executive" | "physician" | "advisory";
+  category: "executive" | "physician" | "advisory" | "ambassador";
   bio: string[];
   image?: string;
   imagePosition?: string;
@@ -15,8 +15,13 @@ export const executiveBoard: TeamMember[] = [
     role: "Chair & Founder, HMD",
     slug: "bakary-jatta",
     category: "executive",
-    bio: [],
     image: "/Bakary Jatta, M.D..jpeg",
+    bio: [
+      "Dr. Jatta is the Chair and Founder of HMD, a global physician-led platform dedicated to advancing elite medical education, leadership, and innovation. He hails from The Gambia, a beautiful nation in West Africa, where his early exposure to healthcare shaped a lifelong commitment to clinical excellence and systems-level impact.",
+      "Driven by a desire to make an indelible contribution to medicine, Dr. Jatta pursued his medical education at the University of The Gambia, earning his degree in Medicine and Surgery after a rigorous academic and clinical training. He briefly practiced at the Edward Francis Small Teaching Hospital \u2014 The Gambia\u2019s largest teaching hospital \u2014 before relocating to the United States.",
+      "Dr. Jatta is beginning PGY-1 in internal medicine this July at the Tennova Healthcare in Knoxville, Tennessee. His passion for evidence-based medicine, physician leadership, and healthcare innovation, led to the founding of HMD to train 21st-century physicians.",
+      "Through HMD, he is leading a paradigm shift to empower physicians as leaders and executives by integrating medicine with business administration, public health and policy, and health informatics literacy. His vision reflects a conviction that the future of healthcare depends on physicians who are not only clinically astute, but also strategically equipped to shape institutions; one that truly defines modern medicine, both in letter and in spirit.",
+    ],
   },
   {
     name: "Vanessa Nunes De Paiva, MBA, Ph.D.",
@@ -86,19 +91,31 @@ export const physicianLeaders: TeamMember[] = [
     role: "HMD Regional Executive, East Africa",
     slug: "tsion-yehualashet-wubshet",
     category: "physician",
-    bio: [],
     image: "/Tsion Yehualashet Wubshet, M.D.jpeg",
     imageScale: 1.8,
     imagePosition: "75% 15%",
+    bio: [
+      "Tsion Yehualashet Wubshet, MD is a consultant internist serving as HMD Regional Executive for East Africa. She brings over five years of clinical leadership experience across hospital and community healthcare settings, with a strong track record in managing complex medical conditions, leading multidisciplinary teams, and strengthening health systems in resource-limited environments.",
+      "Dr. Wubshet has extensive expertise in internal medicine, infectious disease management, emergency response, chronic disease care, and infection prevention and control. In her clinical leadership roles, she has supervised and mentored physicians, nurses, and medical trainees, led quality improvement initiatives, and contributed to clinical audits and departmental governance. She has also collaborated closely with public health teams to address outbreaks and community health priorities.",
+      "Beyond clinical care, Dr. Wubshet is deeply engaged in medical education, research, and professional development. She has participated in evidence-based medical training, mentorship programs, and continuing professional development initiatives, with research interests focused on acute and chronic disease patterns in hospital settings.",
+      "As HMD Regional Executive for East Africa, Dr. Wubshet oversees regional strategy, partnerships, and institutional engagement, advancing HMD\u2019s mission to integrate medicine, leadership, and innovation across the continent. She is known for her ethical leadership, cultural competence, operational discipline, and commitment to patient-centered, globally relevant healthcare education.",
+      "She is fluent in Amharic and English, with working knowledge of French and Afaan Oromo, and remains a strong advocate for transformative, technology-enabled medicine and sustainable healthcare leadership in Africa.",
+    ],
   },
   {
     name: "Chidinma Nwoha, MD, MPH",
     role: "HMD Regional Executive, West Africa",
     slug: "chidinma-nwoha",
     category: "physician",
-    bio: [],
     image: "/Chidinma Nwoha, MD, MPH.jpeg",
     imagePosition: "center 30%",
+    bio: [
+      "Dr Chidinma Nwoha is a Nigerian physician and public health professional with over six years of clinical experience, including five years in general medical practice. She earned her medical degree from Obafemi Awolowo University and holds a Master\u2019s degree in Public Health, reflecting a strong commitment to preventive medicine, population health, and health systems strengthening.",
+      "Her professional background integrates clinical care with public health strategy, mental health awareness, and wellness promotion, enabling a holistic and patient-centred approach to healthcare delivery. Dr Nwoha\u2019s work is informed by an understanding of both individual-level care and broader social and systemic determinants of health.",
+      "Dr Nwoha is recognised for her collaborative leadership style, strong interpersonal skills, and ability to work effectively within multidisciplinary and cross-cultural teams. She is innovative, self-motivated, and highly adaptable, with strong digital literacy and communication capabilities that support her interests in digital health, remote healthcare models, and health education.",
+      "In addition to clinical practice, Dr Nwoha is actively engaged in community outreach, health advocacy, and thought leadership through writing. She has contributed articles as an ambassador with The Borgen Project, participating in global discourse on poverty alleviation, public health, and social development.",
+      "Her professional interests include leadership development, research methodology, public health practice, and project management. Looking ahead, Dr Nwoha seeks to expand her impact through research, policy engagement, and global health initiatives, with a focus on building sustainable health programs, strengthening mental health services, and improving access to quality healthcare for underserved and vulnerable populations both locally and internationally.",
+    ],
   },
   {
     name: "Sadia Ambreen, MBBS, FCPS",
@@ -114,24 +131,74 @@ export const physicianLeaders: TeamMember[] = [
   },
 ];
 
+export const ambassadors: TeamMember[] = [
+  {
+    name: "Fahmida Zahin, MBBS Candidate",
+    role: "HMD Ambassador, United Kingdom",
+    slug: "fahmida-zahin",
+    category: "ambassador",
+    image: "/Fahmida Zahin, MBBS Candidate.jpeg",
+    bio: [
+      "Fahmida Zahin is a UK-based medical student at the University of Buckingham with a strong focus on neurosurgery, neuroscience, AI-driven medicine, and surgical innovation. Alongside her clinical training, she is deeply engaged in high-impact research, leadership, and global health initiatives, with a particular interest in integrating advanced medical science, technology, and equitable healthcare delivery.",
+      "She has authored and co-authored multiple peer-reviewed systematic reviews and meta-analyses across neurosurgery, neurology, oncology, cardiology, and infectious disease, with work presented at leading international conferences including the Society of British Neurological Surgeons, World Congress of Neurology, SCAI, SOHO, and Korean Digestive Disease Week. Her research spans complex and rare conditions such as brainstem cavernous malformations, neurodegenerative disease, and advanced gastrointestinal malignancies, frequently incorporating artificial intelligence, digital biomarkers, and data-driven methodologies to enhance diagnosis, prognosis, and clinical decision-making.",
+      "In parallel, Fahmida has held senior leadership roles within medical education, spearheading structured research mentorship, interdisciplinary academic initiatives, and peer-led learning ecosystems. She is actively developing expertise in coding and computational methods, contributing to AI-assisted research pipelines for evidence synthesis, content analysis, and digital health innovation.",
+      "Beyond academia, she works at the intersection of medicine, entrepreneurship, and technology, having contributed to AI-enabled health and med-tech platforms. Her intellectual interests in history and philosophy inform her approach to ethics, leadership, and long-term thinking in healthcare.",
+      "As an HMD Ambassador for the United Kingdom, Fahmida supports institutional engagement and student outreach in furtherance of HMD\u2019s mission to integrate medicine, leadership, and innovation globally. She is fluent in Assamese and English; professionally proficient in Hindi and Urdu; has working knowledge of Bengali and French; and is currently learning Arabic and Italian.",
+    ],
+  },
+  {
+    name: "Melody Olajide, MBBS Candidate",
+    role: "HMD Ambassador, West Africa",
+    slug: "melody-olajide",
+    category: "ambassador",
+    image: "/Melody Olajide, MMBS Candidate.jpeg",
+    bio: [
+      "Melody Olajide is a distinguished medical student and emerging physician-technologist serving as the HMD Ambassador for West Africa. Based at the University of Ibadan, Nigeria, he brings a unique fusion of clinical acumen, digital strategy, and organizational leadership, with a strong track record in managing national healthcare networks and advocating for technological integration in medical education.",
+      "Mr. Olajide has extensive expertise in strategic communications, neuro-scientific education, and data-driven leadership. He currently holds executive responsibilities within national medical student governance bodies, where he manages public relations and strategic messaging for thousands of trainees. Simultaneously, he leads technical communities focused on data analysis and programming within the healthcare space, bridging the gap between clinical medicine and health-tech to prepare peers for the future of AI-driven diagnostics.",
+      "Beyond his clinical training, Melody is deeply engaged in academic excellence and educational content creation. He leads content strategy for independent neuroscience education platforms, translating complex neuroanatomical concepts into accessible resources. His commitment to academic rigor is evidenced by his recognition in competitive academic forums and his consistent advocacy for \u201cpristine\u201d medical education standards.",
+      "As HMD Ambassador for West Africa, Melody focuses on regional advocacy, institutional outreach, and identifying high-potential partnerships. He is tasked with expanding HMD\u2019s footprint across the region, connecting West African medical institutions with global standards of leadership and innovation. He is known for his creative problem-solving, digital proficiency, and dedication to the \u201cPhysician-Executive\u201d model.",
+      "He is a vocal advocate for the intersection of design, technology, and medicine, remaining committed to building a pipeline of clinically excellent and technologically savvy leaders across the African continent.",
+    ],
+  },
+  {
+    name: "Praise Emmanuel, MD Candidate",
+    role: "HMD Ambassador, Southern Europe",
+    slug: "praise-emmanuel",
+    category: "ambassador",
+    image: "/Praise Emmanuel, MD Candidate.jpeg",
+    bio: [
+      "Praise Emmanuel is a medical student at NOVA Medical School in Lisbon and an aspiring oncologist with a focused interest in the integration of artificial intelligence and digital technologies in clinical medicine. Alongside her medical education, she is pursuing computer science training to support interdisciplinary innovation in healthcare systems and data-driven diagnostics.",
+      "She serves as an HMD Ambassador for Southern Europe with HMD Global, where she contributes to initiatives that promote technology-enabled medical education and cross-regional collaboration. She is the founder of Wellness Africa, a health advocacy platform dedicated to preventive medicine, early screening awareness, and accessible public health education. In Portugal, she collaborates with Marco Mundo to support free health screenings for the elderly population, strengthening community-based preventive care.",
+      "Beyond her academic and clinical interests, Praise mentors pre-teens and teenagers and works as a science tutor, encouraging youth engagement in STEM education. She is fluent in English and Igbo and professionally fluent in Portuguese and Russian, allowing her to work effectively across multicultural healthcare environments.",
+    ],
+  },
+];
+
 export const advisoryBoard: TeamMember[] = [
   {
     name: "Howard Maibach, M.D., FAAD",
     role: "Advisory Board Member, HMD",
     slug: "howard-maibach",
     category: "advisory",
-    bio: [],
     image: "/Howard Maibach.jpeg",
+    bio: [
+      "Dr Howard Maibach is a dermatologist with expertise in treating contact dermatitis (a rash caused by touching an irritating substance) and occupational dermatitis (a rash resulting from workplace exposure to an irritating substance). His specialities include allergic skin disorders and skin conditions caused by exposure to toxic substances. He also has an interest in dermatopharmacology, the study of medications for skin disorders.",
+      "Prof. Maibach earned his medical degree from Tulane University School of Medicine. He completed a residency as well as a fellowship in dermatology at the Hospital of the University of Pennsylvania.",
+      "Prof. Maibach has served on the editorial boards of more than 30 scientific journals. He is a member of 19 professional societies, including the American Academy of Dermatology, San Francisco Dermatological Society and International Commission on Occupational Health.",
+    ],
   },
   {
     name: "Tamesh Sivaguru",
     role: "Technical Board Advisor, HMD",
     slug: "tamesh-sivaguru",
     category: "advisory",
-    bio: [],
     image: "/Tamesh Sivaguru.jpeg",
     imageScale: 1.4,
     imagePosition: "center 40%",
+    bio: [
+      "Tamesh Sivaguru is an Enterprise Software Engineering Consultant and Physicist with a career spanning nearly 15 years as a high-stakes independent contractor and strategic consultant. Originally trained in Physics with a focus on Nuclear Astrophysics, Tamesh applies scientific rigor to the design of high-performance distributed systems and quantitative risk infrastructure.",
+      "His professional trajectory began in the demanding environment of Investment Banking, transitioning into a significant tenure within the Commodities sector, and recently branching into the Insurance industry. Having led technical strategy for premier global institutions\u2014including Willis Towers Watson, Anglo American, and Mitsubishi UFJ Financial Group\u2014he specializes in transforming complex business domains into robust enterprise assets. His expertise lies in .NET architecture, Azure cloud orchestration, and pioneering AI-driven development workflows to ensure institutional-level scalability.",
+    ],
   },
   {
     name: "Andy Barbeau, Ph.D., MBA",
@@ -150,5 +217,6 @@ export const advisoryBoard: TeamMember[] = [
 export const allTeamMembers: TeamMember[] = [
   ...executiveBoard,
   ...physicianLeaders,
+  ...ambassadors,
   ...advisoryBoard,
 ];

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import styles from "./NewsletterSection.module.css";
 
 export default function NewsletterSection() {
@@ -26,6 +27,9 @@ export default function NewsletterSection() {
             Subscribe
           </button>
         </form>
+        <Link href="/newsletter" className={styles.archiveLink}>
+          Read past issues →
+        </Link>
       </div>
     </section>
   );
