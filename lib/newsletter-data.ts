@@ -22,7 +22,7 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "aortic-stenosis",
-    title: "Aortic Stenosis",
+    title: "Aortic Stenosis: An Evidence-Based Approach",
     subtitle:
       "Narrowing of the aortic valve orifice that obstructs left ventricular outflow — from calcific degeneration to TAVR, a complete clinical review.",
     excerpt:
@@ -253,7 +253,7 @@ export const articles: Article[] = [
 
   {
     slug: "mitral-regurgitation",
-    title: "Mitral Regurgitation",
+    title: "Mitral Regurgitation: An Evidence-Based Approach",
     subtitle:
       "Retrograde flow from the left ventricle into the left atrium during systole — from myxomatous degeneration to MitraClip, the complete workup.",
     excerpt:
@@ -487,7 +487,7 @@ export const articles: Article[] = [
 
   {
     slug: "mitral-stenosis",
-    title: "Mitral Stenosis",
+    title: "Mitral Stenosis: An Evidence-Based Approach",
     subtitle:
       "Narrowing of the mitral valve orifice impeding diastolic flow — still primarily rheumatic worldwide. From auscultation to balloon valvotomy.",
     excerpt:
@@ -724,7 +724,7 @@ export const articles: Article[] = [
 
   {
     slug: "tricuspid-regurgitation",
-    title: "Tricuspid Regurgitation",
+    title: "Tricuspid Regurgitation: An Evidence-Based Approach",
     subtitle:
       "Retrograde flow from right ventricle to right atrium during systole — once ignored, increasingly recognized as an independent driver of mortality.",
     excerpt:
