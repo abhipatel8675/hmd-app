@@ -169,16 +169,24 @@ export default async function ArticlePage({
 
           {/* Body */}
           <div className={styles.body}>
-            {article.body.map((sec, idx) => (
-              <section key={idx} className={styles.bodySection}>
-                {sec.heading && <h3 className={styles.bodyHeading}>{sec.heading}</h3>}
-                {sec.paragraphs.map((p, i) => (
-                  <p key={i} className={styles.bodyParagraph}>
-                    {p}
-                  </p>
-                ))}
-              </section>
-            ))}
+            {article.blocks.map((b, idx) => {
+              if (b.type === "h2") {
+                return <h2 key={idx} className={styles.bodyH2}>{b.text}</h2>;
+              }
+              if (b.type === "h3") {
+                return <h3 key={idx} className={styles.bodyH3}>{b.text}</h3>;
+              }
+              if (b.type === "p") {
+                return <p key={idx} className={styles.bodyParagraph}>{b.text}</p>;
+              }
+              return (
+                <ul key={idx} className={styles.bodyList}>
+                  {b.items.map((item, i) => (
+                    <li key={i} className={styles.bodyListItem}>{item}</li>
+                  ))}
+                </ul>
+              );
+            })}
 
             <div className={styles.closingRule} />
             <p className={styles.closingNote}>
