@@ -5,10 +5,29 @@ import { articles } from "@/lib/newsletter-data";
 import styles from "./newsletter.module.css";
 
 export const metadata = {
-  title: "HMD MedDigest — Substance Over Noise",
+  title: "HMD MedDigest — Clinical Intelligence for Physician Leaders",
   description:
-    "A physician-written newsletter on clinical medicine, evidence-based practice, and the science behind the headlines.",
+    "Evidence-based clinical briefings for the physician-executive. A physician-written newsletter on clinical medicine and the science behind the headlines.",
 };
+
+const CATEGORIES = [
+  "All Issues",
+  "Cardiology",
+  "Pulmonology",
+  "Neurology",
+  "Endocrinology",
+  "Nephrology",
+  "Rheumatology",
+  "Health Systems",
+];
+
+const CATEGORY_CARDS = [
+  { name: "Cardiology", glyph: "♥", count: 24 },
+  { name: "Pulmonology", glyph: "◎", count: 18 },
+  { name: "Neurology", glyph: "✺", count: 21 },
+  { name: "Endocrinology", glyph: "✦", count: 15 },
+  { name: "Health Systems", glyph: "▦", count: 12 },
+];
 
 export default function NewsletterPage() {
   const [featured, ...rest] = articles;
@@ -17,191 +36,247 @@ export default function NewsletterPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className={styles.hero}>
-          <div className={styles.heroInner}>
-            <p className={styles.overline}>HMD MedDigest</p>
-            <h1 className={styles.heroTitle}>
-              Substance <em>Over Noise</em>
-            </h1>
-            <span className={styles.heroAccent} />
-            <p className={styles.heroDesc}>
-              A physician-written newsletter on clinical medicine, evidence-based
-              practice, and the science behind the headlines. No hot takes. No
-              hedging. Just the evidence, well explained.
-            </p>
-            <form
-              className={styles.subscribeForm}
-              action=""
-              method="post"
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className={styles.subscribeInput}
-                required
-              />
-              <button type="submit" className={styles.subscribeBtn}>
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </section>
-
-        {/* Sub-Nav (Home / Archive / Recommendations / Authors) */}
-        <section className={styles.subNavWrap}>
-          <div className={styles.subNavInner}>
-            <nav className={styles.subNav}>
-              <a className={`${styles.subNavLink} ${styles.subNavActive}`} href="#home">Home</a>
-              <span className={styles.subNavDivider} />
-              <a className={styles.subNavLink} href="#archive">Archive</a>
-              <span className={styles.subNavDivider} />
-              <a className={styles.subNavLink} href="#recommendations">Recommendations</a>
-              <span className={styles.subNavDivider} />
-              <a className={styles.subNavLink} href="#authors">Authors</a>
-            </nav>
-            <div className={styles.searchWrap}>
-              <span className={styles.searchIcon}>⌕</span>
-              <input
-                className={styles.searchInput}
-                type="search"
-                placeholder="Search the archive…"
-              />
+        {/* MASTHEAD */}
+        <header className={styles.masthead}>
+          <div className={styles.mastheadBgText}>MedDigest</div>
+          <div className={styles.mastheadInner}>
+            <div className={styles.eyebrow}>
+              <span className={styles.eyebrowRule} />
+              <span className={styles.eyebrowLabel}>HMD Clinical Intelligence</span>
             </div>
-          </div>
-        </section>
 
-        {/* Featured */}
-        <section id="home" className={styles.featuredSection}>
-          <div className={styles.featuredInner}>
-            <p className={styles.sectionLabel}>Featured</p>
-            <Link
-              href={`/newsletter/${featured.slug}`}
-              className={styles.featuredCard}
-            >
-              <div
-                className={styles.featuredCover}
-                style={{ background: featured.coverGradient }}
-              >
-                <div className={styles.coverWordmark}>
-                  <span style={{ color: featured.coverAccent }}>
-                    {featured.tags.slice(0, 3).join(" · ")}
-                  </span>
-                </div>
-                <h2
-                  className={styles.coverTitle}
-                  style={{ color: featured.coverAccent }}
+            <h1 className={styles.mastheadTitle}>
+              Med<em>Digest</em>
+            </h1>
+            <p className={styles.mastheadSubtitle}>
+              Evidence-based clinical briefings for the physician-executive.
+            </p>
+
+            <div className={styles.mastheadMeta}>
+              <div className={styles.metaItem}>
+                <span className={styles.metaKey}>Current Issue</span>
+                <span className={styles.metaVal}>Vol. 4 · Issue 18</span>
+              </div>
+              <div className={styles.metaSep} />
+              <div className={styles.metaItem}>
+                <span className={styles.metaKey}>Published</span>
+                <span className={styles.metaVal}>April 2026</span>
+              </div>
+              <div className={styles.metaSep} />
+              <div className={styles.metaItem}>
+                <span className={styles.metaKey}>Articles</span>
+                <span className={styles.metaVal}>{articles.length} This Issue</span>
+              </div>
+              <div className={styles.metaSep} />
+              <div className={styles.metaItem}>
+                <span className={styles.metaKey}>Specialties</span>
+                <span className={styles.metaVal}>Cardiology · Pulm · Neuro</span>
+              </div>
+              <form className={styles.subscribeStrip} action="" method="post">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className={styles.subscribeInput}
+                  required
+                />
+                <button type="submit" className={styles.subscribeBtn}>
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            <nav className={styles.catNav}>
+              {CATEGORIES.map((c, i) => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`${styles.catTab} ${i === 0 ? styles.catTabActive : ""}`}
+                >
+                  {c}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </header>
+
+        {/* PAGE CONTENT */}
+        <div className={styles.pageContent}>
+          {/* FEATURED LEAD */}
+          <section className={styles.leadSection}>
+            <div className={styles.sectionLabel}>Featured Article — Current Issue</div>
+            <div className={styles.leadGrid}>
+              <div>
+                <span className={styles.leadTag}>{featured.tags[0]}</span>
+                <Link
+                  href={`/newsletter/${featured.slug}`}
+                  className={styles.leadTitle}
                 >
                   {featured.title}
-                </h2>
-                <p className={styles.coverSubtitle}>{featured.subtitle}</p>
-                <svg
-                  className={styles.coverWave}
-                  viewBox="0 0 800 120"
-                  preserveAspectRatio="none"
+                </Link>
+                <p className={styles.leadDeck}>{featured.subtitle}</p>
+                <div className={styles.leadByline}>
+                  <strong>{featured.author}</strong>
+                  <span className={styles.bylineDot}>·</span>
+                  {featured.authorRole}
+                  <span className={styles.bylineDot}>·</span>
+                  {featured.readTime}
+                </div>
+                <Link
+                  href={`/newsletter/${featured.slug}`}
+                  className={styles.leadReadMore}
                 >
-                  <path
-                    d="M0,60 C100,20 200,100 400,60 C600,20 700,100 800,60"
-                    fill="none"
-                    stroke={featured.coverAccent}
-                    strokeWidth="1.5"
-                    opacity="0.7"
-                  />
-                </svg>
+                  Read Full Article
+                  <span>→</span>
+                </Link>
               </div>
-              <div className={styles.featuredMeta}>
-                <div className={styles.metaRow}>
-                  <span className={styles.metaDate}>{featured.date}</span>
-                  <span className={styles.metaDot}>·</span>
-                  <span>{featured.readTime}</span>
-                </div>
-                <h3 className={styles.featuredTitle}>{featured.title}</h3>
-                <p className={styles.featuredExcerpt}>{featured.excerpt}</p>
-                <div className={styles.byline}>
-                  <div className={styles.avatarSm}>
-                    {featured.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <span className={styles.bylineName}>{featured.author}</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
 
-        {/* Archive Grid */}
-        <section id="archive" className={styles.archiveSection}>
-          <div className={styles.archiveInner}>
-            <p className={styles.sectionLabel}>Archive</p>
-            <h2 className={styles.archiveTitle}>
-              The <em>Full Collection</em>
-            </h2>
-            <div className={styles.grid}>
-              {rest.map((a) => (
+              <Link
+                href={`/newsletter/${featured.slug}`}
+                className={styles.leadImageWrap}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div
+                  className={styles.leadImage}
+                  style={{ background: featured.coverGradient }}
+                >
+                  <div
+                    className={styles.leadImageWordmark}
+                    style={{ color: featured.coverAccent }}
+                  >
+                    {featured.tags.slice(0, 3).join(" · ")}
+                  </div>
+                  <div
+                    className={styles.leadImageTitle}
+                    style={{ color: featured.coverAccent }}
+                  >
+                    {featured.title}
+                  </div>
+                  <svg
+                    className={styles.leadImageWave}
+                    viewBox="0 0 800 120"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0,60 C100,20 200,100 400,60 C600,20 700,100 800,60"
+                      fill="none"
+                      stroke={featured.coverAccent}
+                      strokeWidth="1.5"
+                      opacity="0.7"
+                    />
+                  </svg>
+                  <span className={styles.issueBadge}>
+                    ★ Featured · Vol. 4 Issue 18
+                  </span>
+                </div>
+              </Link>
+            </div>
+          </section>
+
+          {/* RECENT ARTICLES */}
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionTitle}>Recent Articles</span>
+            <a href="#archive" className={styles.viewAll}>
+              View all recent →
+            </a>
+          </div>
+
+          <div className={styles.articlesGrid}>
+            {rest.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/newsletter/${a.slug}`}
+                className={styles.card}
+              >
+                <div className={styles.cardTag}>{a.tags[0]}</div>
+                <div className={styles.cardTitle}>{a.title}</div>
+                <div className={styles.cardDeck}>{a.excerpt}</div>
+                <div className={styles.cardMeta}>
+                  <div className={styles.cardAuthor}>
+                    <strong>{a.author}</strong>
+                  </div>
+                  <div className={styles.cardReadTime}>◷ {a.readTime}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* CATEGORY STRIP */}
+          <div className={styles.categoryStrip}>
+            {CATEGORY_CARDS.map((c) => (
+              <div key={c.name} className={styles.catCard}>
+                <div className={styles.catCardIcon}>{c.glyph}</div>
+                <div className={styles.catCardName}>{c.name}</div>
+                <div className={styles.catCardCount}>{c.count} articles</div>
+              </div>
+            ))}
+          </div>
+
+          {/* ARCHIVE / CATALOGUE */}
+          <section id="archive" className={styles.archiveSection}>
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionTitle}>Full Catalogue</span>
+              <a href="#" className={styles.viewAll}>
+                RSS Feed →
+              </a>
+            </div>
+
+            <div className={styles.archiveControls}>
+              <div className={styles.archiveSearch}>
+                <span className={styles.archiveSearchIcon}>⌕</span>
+                <input
+                  type="text"
+                  placeholder="Search by title, specialty, or author…"
+                />
+              </div>
+              <button type="button" className={`${styles.filterBtn} ${styles.filterBtnActive}`}>
+                All
+              </button>
+              <button type="button" className={styles.filterBtn}>2026</button>
+              <button type="button" className={styles.filterBtn}>2025</button>
+              <button type="button" className={styles.filterBtn}>2024</button>
+              <select className={styles.sortSelect} defaultValue="newest">
+                <option value="newest">Sort: Newest First</option>
+                <option value="oldest">Sort: Oldest First</option>
+                <option value="popular">Sort: Most Read</option>
+                <option value="az">Sort: A – Z</option>
+              </select>
+            </div>
+
+            <div className={styles.archiveList}>
+              {articles.map((a, i) => (
                 <Link
                   key={a.slug}
                   href={`/newsletter/${a.slug}`}
-                  className={styles.card}
+                  className={styles.archiveItem}
                 >
-                  <div
-                    className={styles.cardCover}
-                    style={{ background: a.coverGradient }}
-                  >
-                    <div className={styles.cardTags}>
-                      {a.tags.slice(0, 2).map((t) => (
-                        <span key={t} className={styles.cardTag}>
-                          {t}
-                        </span>
-                      ))}
-                      {a.tags.length > 2 && (
-                        <span className={styles.cardTag}>+{a.tags.length - 2}</span>
-                      )}
-                    </div>
-                    <h3
-                      className={styles.cardCoverTitle}
-                      style={{ color: a.coverAccent }}
-                    >
-                      {a.title}
-                    </h3>
-                    <svg
-                      className={styles.cardWave}
-                      viewBox="0 0 400 80"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M0,40 C60,10 120,70 200,40 C280,10 340,70 400,40"
-                        fill="none"
-                        stroke={a.coverAccent}
-                        strokeWidth="1.2"
-                        opacity="0.75"
-                      />
-                    </svg>
+                  <div className={styles.archiveIssueNum}>
+                    {String(articles.length - i).padStart(3, "0")}
                   </div>
-                  <div className={styles.cardMeta}>
-                    <div className={styles.metaRow}>
-                      <span className={styles.metaDate}>{a.date}</span>
-                      <span className={styles.metaDot}>·</span>
-                      <span>{a.readTime}</span>
+                  <div className={styles.archiveBody}>
+                    <div className={styles.archiveTag}>
+                      {a.tags[0]} · {a.date}
                     </div>
-                    <h4 className={styles.cardTitle}>{a.title}</h4>
-                    <p className={styles.cardExcerpt}>{a.excerpt}</p>
-                    <div className={styles.byline}>
-                      <div className={styles.avatarSm}>
-                        {a.author
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </div>
-                      <span className={styles.bylineName}>{a.author}</span>
+                    <div className={styles.archiveTitle}>{a.title}</div>
+                    <div className={styles.archiveDeck}>{a.excerpt}</div>
+                    <div className={styles.archiveByline}>
+                      <strong>{a.author}</strong> · {a.readTime}
                     </div>
+                  </div>
+                  <div className={styles.archiveRight}>
+                    <div className={styles.archiveDate}>{a.date}</div>
+                    <div className={styles.archiveReadBtn}>Read →</div>
                   </div>
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
+
+            <div className={styles.loadMoreRow}>
+              <button type="button" className={styles.loadMoreBtn}>
+                Load Earlier Issues
+              </button>
+            </div>
+          </section>
+        </div>
       </main>
       <Footer />
     </>
