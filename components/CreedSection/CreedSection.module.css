@@ -57,6 +57,7 @@
 }
 
 .body {
+  font-family: var(--font-dm-sans), sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.8;
@@ -87,6 +88,7 @@
 }
 
 .attributionBody {
+  font-family: var(--font-dm-sans), sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.65;

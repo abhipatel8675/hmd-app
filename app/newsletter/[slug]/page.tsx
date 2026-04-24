@@ -5,6 +5,11 @@ import Footer from "@/components/Footer";
 import NewsletterSection from "@/components/NewsletterSection";
 import { articles, getArticle, type Block } from "@/lib/newsletter-data";
 import styles from "./article.module.css";
+import {
+  TopProgressBar,
+  RailProgress,
+  ArticleToc,
+} from "./ArticleClient";
 
 export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -38,10 +43,157 @@ function takeawaysFromBlocks(blocks: Block[]): string[] {
     return firstList.items.slice(0, 4);
   }
   const paragraphs = blocks
-    .filter((b) => b.type === "p")
+    .filter((b): b is Extract<Block, { type: "p" }> => b.type === "p")
     .slice(0, 4)
-    .map((b) => (b.type === "p" ? b.text : ""));
+    .map((b) => b.text);
   return paragraphs;
+}
+
+function renderBlock(b: Block, idx: number, isFirstParagraph: boolean) {
+  switch (b.type) {
+    case "h2":
+      return (
+        <h2
+          key={idx}
+          id={slugifyHeading(b.text)}
+          className={styles.bodyH2}
+        >
+          {b.text}
+        </h2>
+      );
+    case "h3":
+      return (
+        <h3 key={idx} className={styles.bodyH3}>
+          {b.text}
+        </h3>
+      );
+    case "p":
+      return (
+        <p
+          key={idx}
+          className={`${styles.bodyParagraph} ${isFirstParagraph ? styles.bodyDropCap : ""}`}
+        >
+          {b.text}
+        </p>
+      );
+    case "ul":
+      return (
+        <ul key={idx} className={styles.bodyList}>
+          {b.items.map((item, i) => (
+            <li key={i} className={styles.bodyListItem}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    case "ol":
+      return (
+        <ol key={idx} className={styles.bodyOrderedList}>
+          {b.items.map((item, i) => (
+            <li
+              key={i}
+              className={styles.bodyOrderedItem}
+              dangerouslySetInnerHTML={{ __html: item }}
+            />
+          ))}
+        </ol>
+      );
+    case "callout": {
+      const variantClass =
+        b.variant === "red"
+          ? styles.calloutRed
+          : b.variant === "green"
+            ? styles.calloutGreen
+            : styles.calloutGold;
+      return (
+        <div key={idx} className={`${styles.callout} ${variantClass}`}>
+          <div className={styles.calloutLabel}>{b.label}</div>
+          <p className={styles.calloutText}>{b.text}</p>
+        </div>
+      );
+    }
+    case "pullquote":
+      return (
+        <blockquote key={idx} className={styles.pullQuote}>
+          <p className={styles.pullQuoteText}>{b.text}</p>
+          {b.cite && <cite className={styles.pullQuoteCite}>{b.cite}</cite>}
+        </blockquote>
+      );
+    case "stat":
+      return (
+        <div key={idx} className={styles.statHighlight}>
+          {b.items.flatMap((s, i) => {
+            const node = (
+              <div key={`item-${i}`} className={styles.statItem}>
+                <div className={styles.statNumber}>
+                  {s.number}
+                  {s.sup && <sup>{s.sup}</sup>}
+                </div>
+                <div className={styles.statLabel}>{s.label}</div>
+              </div>
+            );
+            if (i < b.items.length - 1) {
+              return [
+                node,
+                <div key={`sep-${i}`} className={styles.statDivider} />,
+              ];
+            }
+            return [node];
+          })}
+        </div>
+      );
+    case "table":
+      return (
+        <div key={idx} className={styles.dataTableWrap}>
+          {b.caption && (
+            <div className={styles.dataTableCaption}>{b.caption}</div>
+          )}
+          <table className={styles.dataTable}>
+            <thead>
+              <tr>
+                {b.headers.map((h, i) => (
+                  <th key={i}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {b.rows.map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+            {b.footer && (
+              <tfoot>
+                <tr>
+                  <td colSpan={b.headers.length}>{b.footer}</td>
+                </tr>
+              </tfoot>
+            )}
+          </table>
+        </div>
+      );
+    case "sectionRule":
+      return (
+        <div key={idx} className={styles.sectionRuleLabel}>
+          {b.label && <span>{b.label}</span>}
+        </div>
+      );
+    case "references":
+      return (
+        <div key={idx} className={styles.references}>
+          <h2 className={styles.referencesHeading}>References</h2>
+          {b.items.map((ref, i) => (
+            <div key={i} className={styles.refItem}>
+              <span className={styles.refNum}>[{i + 1}]</span>
+              <div dangerouslySetInnerHTML={{ __html: ref }} />
+            </div>
+          ))}
+        </div>
+      );
+  }
 }
 
 export default async function ArticlePage({
@@ -64,22 +216,19 @@ export default async function ArticlePage({
     .join("")
     .slice(0, 2);
 
-  // Build TOC from h2 headings
   const tocItems = article.blocks
-    .filter((b) => b.type === "h2")
-    .map((b) => {
-      if (b.type !== "h2") return null;
-      return { id: slugifyHeading(b.text), text: b.text };
-    })
-    .filter((v): v is { id: string; text: string } => v !== null);
+    .filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2")
+    .map((b) => ({ id: slugifyHeading(b.text), text: b.text }));
 
   const takeaways = takeawaysFromBlocks(article.blocks);
 
+  const firstParagraphIdx = article.blocks.findIndex((b) => b.type === "p");
+
   return (
     <>
+      <TopProgressBar />
       <Navbar />
       <main>
-        {/* HERO */}
         <header className={styles.articleHero}>
           <div className={styles.heroVolBg}>Vol.4</div>
           <div className={styles.heroInner}>
@@ -123,7 +272,9 @@ export default async function ArticlePage({
               <div className={styles.heroAuthorAvatar}>{initials}</div>
               <div className={styles.heroAuthorInfo}>
                 <div className={styles.heroAuthorName}>{article.author}</div>
-                <div className={styles.heroAuthorRole}>{article.authorRole}</div>
+                <div className={styles.heroAuthorRole}>
+                  {article.authorRole}
+                </div>
               </div>
               <div className={styles.heroMetaPills}>
                 <div className={styles.metaDivider} />
@@ -146,24 +297,34 @@ export default async function ArticlePage({
           </div>
         </header>
 
-        {/* 3-COLUMN SHELL */}
         <div className={styles.articleShell}>
-          {/* LEFT: SHARE RAIL */}
           <aside className={styles.shareRail}>
             <div className={styles.railLabel}>Share</div>
-            <a href="#" className={styles.railBtn} aria-label="Copy link">∞</a>
-            <a href="#" className={styles.railBtn} aria-label="Email">✉</a>
-            <a href="#" className={styles.railBtn} aria-label="X">X</a>
-            <a href="#" className={styles.railBtn} aria-label="LinkedIn">in</a>
+            <a href="#" className={styles.railBtn} aria-label="Copy link">
+              ∞
+            </a>
+            <a href="#" className={styles.railBtn} aria-label="Email">
+              ✉
+            </a>
+            <a href="#" className={styles.railBtn} aria-label="X">
+              X
+            </a>
+            <a href="#" className={styles.railBtn} aria-label="LinkedIn">
+              in
+            </a>
             <div className={styles.railSep} />
-            <a href="#" className={styles.railBtn} aria-label="Save">❤</a>
-            <a href="#" className={styles.railBtn} aria-label="Print">⎙</a>
+            <a href="#" className={styles.railBtn} aria-label="Save">
+              ♡
+            </a>
+            <a href="#" className={styles.railBtn} aria-label="Print">
+              ⎙
+            </a>
+            <div className={styles.railSep} />
+            <RailProgress />
           </aside>
 
-          {/* CENTER: BODY */}
           <article className={styles.articleBodyWrap}>
             <div className={styles.bodyInner}>
-              {/* Key Takeaways */}
               <div className={styles.keyTakeaways}>
                 <div className={styles.ktHeader}>
                   <div className={styles.ktIcon}>✓</div>
@@ -178,60 +339,19 @@ export default async function ArticlePage({
                 </ul>
               </div>
 
-              {/* Body */}
               <div className={styles.articleBody}>
-                {article.blocks.map((b, idx) => {
-                  if (b.type === "h2") {
-                    return (
-                      <h2
-                        key={idx}
-                        id={slugifyHeading(b.text)}
-                        className={styles.bodyH2}
-                      >
-                        {b.text}
-                      </h2>
-                    );
-                  }
-                  if (b.type === "h3") {
-                    return (
-                      <h3 key={idx} className={styles.bodyH3}>
-                        {b.text}
-                      </h3>
-                    );
-                  }
-                  if (b.type === "p") {
-                    const isFirst =
-                      idx ===
-                      article.blocks.findIndex((bb) => bb.type === "p");
-                    return (
-                      <p
-                        key={idx}
-                        className={`${styles.bodyParagraph} ${isFirst ? styles.bodyDropCap : ""}`}
-                      >
-                        {b.text}
-                      </p>
-                    );
-                  }
-                  return (
-                    <ul key={idx} className={styles.bodyList}>
-                      {b.items.map((item, i) => (
-                        <li key={i} className={styles.bodyListItem}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                })}
+                {article.blocks.map((b, idx) =>
+                  renderBlock(b, idx, idx === firstParagraphIdx)
+                )}
 
                 <div className={styles.closingRule} />
                 <p className={styles.closingNote}>
                   Published in{" "}
-                  <strong>HMD MedDigest — Substance Over Noise</strong>. Written
+                  <strong>HMD MedDigest — Medicine, via pristina</strong>. Written
                   for working physicians, by working physicians.
                 </p>
               </div>
 
-              {/* Author card */}
               <aside className={styles.authorCard}>
                 <div className={styles.authorCardAvatar}>{initials}</div>
                 <div>
@@ -246,7 +366,6 @@ export default async function ArticlePage({
                 </div>
               </aside>
 
-              {/* Related */}
               {related.length > 0 && (
                 <section className={styles.relatedSection}>
                   <div className={styles.relatedLabel}>Continue Reading</div>
@@ -270,38 +389,8 @@ export default async function ArticlePage({
             </div>
           </article>
 
-          {/* RIGHT: TOC */}
           <aside className={styles.tocPanel}>
-            <div className={styles.tocTitle}>In this article</div>
-            <div className={styles.tocProgressBar}>
-              <div className={styles.tocProgressFill} />
-            </div>
-            <nav className={styles.tocNav}>
-              {tocItems.map((t, i) => (
-                <a
-                  key={t.id}
-                  href={`#${t.id}`}
-                  className={`${styles.tocLink} ${i === 0 ? styles.tocLinkActive : ""}`}
-                >
-                  {t.text}
-                </a>
-              ))}
-            </nav>
-            <div className={styles.tocDivider} />
-            <div className={styles.tocTools}>
-              <button
-                type="button"
-                className={`${styles.tocToolBtn} ${styles.tocToolBtnPrimary}`}
-              >
-                ✎ iQbank Questions
-              </button>
-              <button type="button" className={styles.tocToolBtn}>
-                ⤓ Download PDF
-              </button>
-              <button type="button" className={styles.tocToolBtn}>
-                ♡ Save Article
-              </button>
-            </div>
+            <ArticleToc items={tocItems} />
           </aside>
         </div>
 

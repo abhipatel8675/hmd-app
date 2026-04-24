@@ -122,6 +122,7 @@
 
 /* Sub-copy */
 .sub {
+  font-family: var(--font-dm-sans), sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.7;

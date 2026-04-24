@@ -2,7 +2,23 @@ export type Block =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "p"; text: string }
-  | { type: "ul"; items: string[] };
+  | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
+  | { type: "callout"; variant: "gold" | "red" | "green"; label: string; text: string }
+  | { type: "pullquote"; text: string; cite?: string }
+  | {
+      type: "stat";
+      items: { number: string; sup?: string; label: string }[];
+    }
+  | {
+      type: "table";
+      caption?: string;
+      headers: string[];
+      rows: string[][];
+      footer?: string;
+    }
+  | { type: "sectionRule"; label?: string }
+  | { type: "references"; items: string[] };
 
 export type Article = {
   slug: string;
@@ -62,6 +78,20 @@ export const articles: Article[] = [
           "Geography: Degenerative AS common in high-income countries; rheumatic causes still present in low- and middle-income regions.",
           "Comorbidities: Often coexists with hypertension, coronary artery disease, and diabetes.",
         ],
+      },
+      {
+        type: "stat",
+        items: [
+          { number: "2", sup: "–7%", label: "Prevalence of severe AS in adults older than 65 years" },
+          { number: "50", sup: "%", label: "Two-year mortality for untreated symptomatic severe AS" },
+          { number: "80", sup: "%", label: "Of AS cases in high-income countries are calcific degenerative" },
+        ],
+      },
+      {
+        type: "callout",
+        variant: "gold",
+        label: "Clinical Context",
+        text: "The onset of symptoms — angina, syncope, or heart failure — marks a critical inflection point. Median survival without intervention falls to 2–5 years from symptom onset, making timely referral for SAVR or TAVR evaluation essential.",
       },
 
       { type: "h3", text: "Pathophysiology" },
@@ -171,6 +201,23 @@ export const articles: Article[] = [
           "Cardiac catheterization: confirms severity if noninvasive data is conflicting; assesses coronary anatomy preoperatively.",
         ],
       },
+      {
+        type: "table",
+        caption: "Table 1 — Echocardiographic Staging of Aortic Stenosis (ACC/AHA)",
+        headers: ["Severity", "Peak Velocity (m/s)", "Mean Gradient (mmHg)", "Valve Area (cm²)"],
+        rows: [
+          ["Mild", "2.6 – 2.9", "< 20", "> 1.5"],
+          ["Moderate", "3.0 – 3.9", "20 – 39", "1.0 – 1.5"],
+          ["Severe", "≥ 4.0", "≥ 40", "< 1.0"],
+          ["Very Severe", "≥ 5.0", "≥ 60", "< 0.6"],
+        ],
+        footer: "Staging should integrate symptoms, LV function, and valve morphology — not peak velocity alone.",
+      },
+      {
+        type: "pullquote",
+        text: "Symptomatic severe aortic stenosis is a surgical disease. Medical therapy is supportive at best — the only intervention that alters the natural history is mechanical relief of obstruction.",
+        cite: "— 2020 ACC/AHA Valvular Heart Disease Guideline",
+      },
 
       { type: "h2", text: "Treatment" },
       { type: "h3", text: "Medical Management" },
@@ -188,12 +235,24 @@ export const articles: Article[] = [
       },
       { type: "h3", text: "Interventional / Surgical" },
       {
-        type: "ul",
+        type: "ol",
         items: [
-          "Surgical Aortic Valve Replacement (SAVR): symptomatic severe AS, asymptomatic with EF <50%, or undergoing other cardiac surgery.",
-          "Transcatheter Aortic Valve Replacement (TAVR): severe symptomatic AS in high-risk or inoperable candidates; increasingly used in intermediate- and low-risk patients.",
-          "Balloon Aortic Valvuloplasty: temporary measure in select non-surgical patients (e.g., bridge to TAVR).",
+          "<strong>Surgical Aortic Valve Replacement (SAVR)</strong> — symptomatic severe AS, asymptomatic with EF <50%, or at the time of other cardiac surgery.",
+          "<strong>Transcatheter Aortic Valve Replacement (TAVR)</strong> — severe symptomatic AS in high-risk or inoperable candidates; increasingly used in intermediate- and low-risk patients.",
+          "<strong>Balloon Aortic Valvuloplasty</strong> — temporary measure in select non-surgical patients (e.g., bridge to TAVR).",
         ],
+      },
+      {
+        type: "callout",
+        variant: "green",
+        label: "Practice Point",
+        text: "In patients aged 65–80 with severe symptomatic AS and suitable femoral access, TAVR has achieved non-inferiority (and in several cohorts, superiority) to SAVR for all-cause mortality at 5 years — making heart-team review the standard.",
+      },
+      {
+        type: "callout",
+        variant: "red",
+        label: "Safety Warning",
+        text: "Avoid aggressive preload or afterload reduction in severe AS — nitrates, vasodilators, and high-dose diuretics can precipitate syncope or cardiogenic shock. Cardiac output is fixed across the stenotic valve.",
       },
 
       { type: "h2", text: "Consults" },
@@ -246,6 +305,16 @@ export const articles: Article[] = [
           "Assess LV function and new conduction abnormalities.",
           "Reevaluate for valve intervention as disease progresses.",
           "Optimize cardiovascular risk factors (BP, lipids, diabetes).",
+        ],
+      },
+      { type: "sectionRule", label: "References" },
+      {
+        type: "references",
+        items: [
+          "Otto CM, et al. 2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease. <em>Circulation.</em> 2021;143:e72–e227.",
+          "Leon MB, et al. Transcatheter or Surgical Aortic-Valve Replacement in Intermediate-Risk Patients (PARTNER 2). <em>NEJM.</em> 2016;374:1609–1620.",
+          "Mack MJ, et al. Transcatheter Aortic-Valve Replacement in Low-Risk Patients (PARTNER 3). <em>NEJM.</em> 2019;380:1695–1705.",
+          "Popma JJ, et al. Transcatheter Aortic-Valve Replacement with a Self-Expanding Valve in Low-Risk Patients (Evolut Low Risk). <em>NEJM.</em> 2019;380:1706–1715.",
         ],
       },
     ],

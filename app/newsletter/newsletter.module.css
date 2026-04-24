@@ -155,10 +155,10 @@
 /* Category tabs */
 .catNav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0;
   border-top: 1px solid rgba(250, 247, 240, 0.05);
-  overflow-x: auto;
 }
 .catTab {
   font-family: var(--font-dm-sans), sans-serif;
@@ -167,7 +167,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(250, 247, 240, 0.45);
-  padding: 16px 22px;
+  padding: 14px 18px;
   border-bottom: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
   cursor: pointer;

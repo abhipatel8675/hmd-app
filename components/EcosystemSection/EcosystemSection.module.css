@@ -71,6 +71,7 @@
 }
 
 .subtitle {
+  font-family: var(--font-dm-sans), sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.7;
@@ -289,6 +290,7 @@
 }
 
 .nodeDesc {
+  font-family: var(--font-dm-sans), sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.6;

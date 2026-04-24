@@ -18,6 +18,16 @@ const CATEGORIES = [
   "Endocrinology",
   "Nephrology",
   "Rheumatology",
+  "Dermatology",
+  "Gastroenterology",
+  "Internal Medicine",
+  "Oncology",
+  "Surgery",
+  "Psychiatry",
+  "Pediatrics",
+  "Lectures",
+  "The HMD Podcast",
+  "Publications",
   "Health Systems",
 ];
 
@@ -42,14 +52,14 @@ export default function NewsletterPage() {
           <div className={styles.mastheadInner}>
             <div className={styles.eyebrow}>
               <span className={styles.eyebrowRule} />
-              <span className={styles.eyebrowLabel}>HMD Clinical Intelligence</span>
+              <span className={styles.eyebrowLabel}>HMD Clinical And Health Systems</span>
             </div>
 
             <h1 className={styles.mastheadTitle}>
               Med<em>Digest</em>
             </h1>
             <p className={styles.mastheadSubtitle}>
-              Evidence-based clinical briefings for the physician-executive.
+              Evidence-based articles for clinicians, physician-executives, & medical trainees.
             </p>
 
             <div className={styles.mastheadMeta}>
@@ -151,19 +161,6 @@ export default function NewsletterPage() {
                   >
                     {featured.title}
                   </div>
-                  <svg
-                    className={styles.leadImageWave}
-                    viewBox="0 0 800 120"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0,60 C100,20 200,100 400,60 C600,20 700,100 800,60"
-                      fill="none"
-                      stroke={featured.coverAccent}
-                      strokeWidth="1.5"
-                      opacity="0.7"
-                    />
-                  </svg>
                   <span className={styles.issueBadge}>
                     ★ Featured · Vol. 4 Issue 18
                   </span>
