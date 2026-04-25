@@ -152,6 +152,12 @@
   flex-shrink: 0;
   margin-right: 16px;
   letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+}
+.avatarImg {
+  object-fit: cover;
+  object-position: center top;
 }
 .heroAuthorInfo { flex: 1; min-width: 200px; }
 .heroAuthorName {
@@ -481,6 +487,8 @@
   font-size: 22px;
   color: var(--gold-light);
   letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
 }
 .authorCardLabel {
   font-family: var(--font-cinzel), serif;

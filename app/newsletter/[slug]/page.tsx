@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -210,12 +211,6 @@ export default async function ArticlePage({
     .filter((a) => a.tags.some((t) => article.tags.includes(t)))
     .slice(0, 2);
 
-  const initials = article.author
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2);
-
   const tocItems = article.blocks
     .filter((b): b is Extract<Block, { type: "h2" }> => b.type === "h2")
     .map((b) => ({ id: slugifyHeading(b.text), text: b.text }));
@@ -269,7 +264,15 @@ export default async function ArticlePage({
             <p className={styles.heroDeck}>{article.subtitle}</p>
 
             <div className={styles.heroMeta}>
-              <div className={styles.heroAuthorAvatar}>{initials}</div>
+              <div className={styles.heroAuthorAvatar}>
+                <Image
+                  src="/author-default.jpeg"
+                  alt={article.author}
+                  fill
+                  sizes="50px"
+                  className={styles.avatarImg}
+                />
+              </div>
               <div className={styles.heroAuthorInfo}>
                 <div className={styles.heroAuthorName}>{article.author}</div>
                 <div className={styles.heroAuthorRole}>
@@ -353,7 +356,15 @@ export default async function ArticlePage({
               </div>
 
               <aside className={styles.authorCard}>
-                <div className={styles.authorCardAvatar}>{initials}</div>
+                <div className={styles.authorCardAvatar}>
+                  <Image
+                    src="/author-default.jpeg"
+                    alt={article.author}
+                    fill
+                    sizes="78px"
+                    className={styles.avatarImg}
+                  />
+                </div>
                 <div>
                   <p className={styles.authorCardLabel}>Written By</p>
                   <h4 className={styles.authorCardName}>{article.author}</h4>

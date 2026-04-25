@@ -1,6 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./article.module.css";
+
+const SAVED_KEY = "hmd:saved-articles";
+
+function readSaved(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(SAVED_KEY);
+    return raw ? (JSON.parse(raw) as string[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeSaved(slugs: string[]) {
+  try {
+    window.localStorage.setItem(SAVED_KEY, JSON.stringify(slugs));
+  } catch {
+    /* ignore quota / privacy errors */
+  }
+}
 
 function useScrollPct() {
   const [pct, setPct] = useState(0);
@@ -95,13 +116,56 @@ export function ArticleToc({ items }: { items: TocItem[] }) {
         >
           ✎ iQbank Questions
         </button>
-        <button type="button" className={styles.tocToolBtn}>
-          ⤓ Download PDF
-        </button>
-        <button type="button" className={styles.tocToolBtn}>
-          ♡ Save Article
-        </button>
+        <DownloadPdfButton />
+        <SaveArticleButton />
       </div>
     </>
+  );
+}
+
+function DownloadPdfButton() {
+  const handleDownload = () => {
+    if (typeof window !== "undefined") window.print();
+  };
+  return (
+    <button
+      type="button"
+      className={styles.tocToolBtn}
+      onClick={handleDownload}
+    >
+      ⤓ Download PDF
+    </button>
+  );
+}
+
+function SaveArticleButton() {
+  const pathname = usePathname();
+  const slug = pathname?.split("/").filter(Boolean).pop() ?? "";
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!slug) return;
+    setSaved(readSaved().includes(slug));
+  }, [slug]);
+
+  const toggleSave = () => {
+    if (!slug) return;
+    const current = readSaved();
+    const next = current.includes(slug)
+      ? current.filter((s) => s !== slug)
+      : [...current, slug];
+    writeSaved(next);
+    setSaved(next.includes(slug));
+  };
+
+  return (
+    <button
+      type="button"
+      className={styles.tocToolBtn}
+      onClick={toggleSave}
+      aria-pressed={saved}
+    >
+      {saved ? "♥ Saved" : "♡ Save Article"}
+    </button>
   );
 }
