@@ -43,7 +43,7 @@
 }
 
 .quote {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-dm-sans), sans-serif;
   font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
   line-height: 1.55;
