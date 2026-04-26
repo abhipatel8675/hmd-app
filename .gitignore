@@ -25,3 +25,10 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+
+# Top-level local assets (not part of the app)
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+/*.html
