@@ -44,7 +44,7 @@ export const articles: Article[] = [
     excerpt:
       "The most common valvular heart disease in older adults — recognition, staging, and the modern intervention pathway from SAVR to TAVR.",
     author: "Sadia Ambreen, MBBS, FCPS | Bakary Jatta, MD, PGY-1",
-    authorRole: "HMD Faculty · Cardiology",
+    authorRole: "HMD Editorial",
     date: "Apr 22, 2026",
     readTime: "18 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
@@ -328,7 +328,7 @@ export const articles: Article[] = [
     excerpt:
       "Primary versus secondary MR, acute versus chronic — how the etiology dictates the therapy, and when to refer for repair.",
     author: "Sadia Ambreen, MBBS, FCPS | Bakary Jatta, MD, PGY-1",
-    authorRole: "HMD Faculty · Cardiology",
+    authorRole: "HMD Editorial",
     date: "Apr 22, 2026",
     readTime: "16 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
@@ -562,7 +562,7 @@ export const articles: Article[] = [
     excerpt:
       "A valvular disease of the developing world and an aging-population problem in high-income settings — how to recognize and treat it.",
     author: "Sadia Ambreen, MBBS, FCPS | Bakary Jatta, MD, PGY-1",
-    authorRole: "HMD Faculty · Cardiology",
+    authorRole: "HMD Editorial",
     date: "Apr 22, 2026",
     readTime: "15 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
@@ -799,7 +799,7 @@ export const articles: Article[] = [
     excerpt:
       "Functional versus primary TR, the emerging transcatheter options, and why chronic right-sided congestion is no longer a diagnosis of exclusion.",
     author: "Sadia Ambreen, MBBS, FCPS | Bakary Jatta, MD, PGY-1",
-    authorRole: "HMD Faculty · Cardiology",
+    authorRole: "HMD Editorial",
     date: "Apr 22, 2026",
     readTime: "17 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
