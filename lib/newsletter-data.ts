@@ -38,7 +38,7 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "aortic-stenosis",
-    title: "Hello",
+    title: "Aortic Stenosis: An Evidence-Based Approach",
     subtitle:
       "Narrowing of the aortic valve orifice that obstructs left ventricular outflow — from calcific degeneration to TAVR, a complete clinical review.",
     excerpt:
