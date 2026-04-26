@@ -43,8 +43,8 @@ export const articles: Article[] = [
       "Narrowing of the aortic valve orifice that obstructs left ventricular outflow — from calcific degeneration to TAVR, a complete clinical review.",
     excerpt:
       "The most common valvular heart disease in older adults — recognition, staging, and the modern intervention pathway from SAVR to TAVR.",
-    author: "HMD Clinical Review",
-    authorRole: "HMD Faculty · Cardiology",
+    author: "Sadia Ambreen, MBBS, FCPS",
+    authorRole: "Bakary Jatta, MD, PGY-1",
     date: "Apr 22, 2026",
     readTime: "18 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
