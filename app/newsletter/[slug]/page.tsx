@@ -220,7 +220,7 @@ export default async function ArticlePage({
   const firstParagraphIdx = article.blocks.findIndex((b) => b.type === "p");
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://meddigest.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hmd.com.co";
   const articleUrl = `${siteUrl}/newsletter/${article.slug}`;
   const shareTitle = `${article.title} — HMD MedDigest`;
   const encodedUrl = encodeURIComponent(articleUrl);
