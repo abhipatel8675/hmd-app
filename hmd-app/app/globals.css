@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --navy:       #0A1628;
+  --navy-mid:   #112240;
+  --navy-light: #1a3260;
+  --navy-dark:  #060f1e;
+  --gold:       #C9A84C;
+  --gold-light: #E2C070;
+  --gold-pale:  #F5E9C8;
+  --ivory:      #FAF7F0;
+  --white:      #FFFFFF;
+  --text-dim:   rgba(250,247,240,0.65);
+  --burgundy:   #6B2737;
+  --teal-dark:  #1A3D3D;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+@media print {
+  @page { margin: 16mm; }
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  nav, header[class*="articleHero"] ~ div [class*="shareRail"],
+  aside[class*="shareRail"], aside[class*="tocPanel"],
+  [class*="readProgress"], footer, [class*="NewsletterSection"] {
+    display: none !important;
+  }
+  a { color: inherit !important; text-decoration: none !important; }
+  img { max-width: 100% !important; height: auto !important; }
+}

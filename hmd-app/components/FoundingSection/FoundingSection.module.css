@@ -1,0 +1,235 @@
+.wrap {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    rgba(201,168,76,0.025) 0px,
+    rgba(201,168,76,0.025) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+}
+
+.inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+/* LEFT */
+.left {
+  padding: 80px 64px 80px 48px;
+  border-right: 1px solid rgba(201,168,76,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.brandLogo {
+  background: var(--navy-mid);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-family: var(--font-cinzel), serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 9px;
+}
+
+.brandRule {
+  flex: 1;
+  height: 1px;
+  background: rgba(201,168,76,0.2);
+}
+
+.brandTagline {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.sectionLabel {
+  font-family: var(--font-cinzel), serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.headline {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.rule {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 24px;
+}
+
+.body {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-dim);
+  max-width: 440px;
+  margin-bottom: 28px;
+}
+
+.bodyAccent {
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+/* ── Expandable section ── */
+.expandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.expanded {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.quote {
+  border-left: 3px solid rgba(201,168,76,0.3);
+  padding: 16px 0 16px 20px;
+  margin-bottom: 24px;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ivory);
+}
+
+.quote em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-cinzel), serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding: 0 0 4px 0;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.readMore:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+/* RIGHT */
+.right {
+  padding: 60px 48px 60px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.journalCard {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 28px;
+}
+
+.journalTag {
+  font-family: var(--font-cinzel), serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.journalTag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.journalTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.journalDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+.imageBlock {
+  height: 220px;
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.1);
+  overflow: hidden;
+}
+
+.journalPhoto {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .left { padding: 60px 24px 40px; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
+  .right { padding: 40px 24px 60px; }
+}

@@ -1,0 +1,136 @@
+.wrap {
+  background: linear-gradient(180deg, #0f1c35 0%, #0A1628 100%);
+  padding: 96px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(18,52,100,0.3) 0%, transparent 60%);
+}
+
+.wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    rgba(201,168,76,0.02) 0px,
+    rgba(201,168,76,0.02) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-cinzel), serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  font-size: clamp(26px, 3vw, 40px);
+  color: var(--white);
+  line-height: 1.25;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 64px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  position: relative;
+}
+
+.itemLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--navy-mid);
+  border: 2px solid var(--navy-light);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  margin-top: 4px;
+}
+
+.item:not(:last-child) .dot::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: rgba(201,168,76,0.2);
+  bottom: -56px;
+}
+
+.line {
+  flex: 1;
+  width: 1px;
+  background: rgba(201,168,76,0.15);
+  margin-top: 4px;
+}
+
+.itemContent {}
+
+.itemName {
+  font-family: var(--font-cormorant), serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.itemDesc {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 64px 24px; }
+  .grid { grid-template-columns: 1fr; gap: 0; }
+}

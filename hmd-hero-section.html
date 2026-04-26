@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HMD Hero Section – Elite Redesign</title>
+
+<!-- Google Fonts: Cormorant Garamond (prestige serif) + DM Sans (refined body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════════════
+   HMD ELITE HERO — PASTE INTO WORDPRESS CUSTOM HTML
+   or Elementor HTML Widget / Divi Code Module
+   ═══════════════════════════════════════════════════ */
+
+.hmd-hero-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+
+.hmd-hero-wrap {
+  --navy:       #0A1628;
+  --navy-mid:   #112240;
+  --navy-light: #1a3260;
+  --gold:       #C9A84C;
+  --gold-light: #E2C070;
+  --gold-pale:  #F5E9C8;
+  --ivory:      #FAF7F0;
+  --white:      #FFFFFF;
+  --text-dim:   rgba(250,247,240,0.65);
+
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--ivory);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Background texture & geometry ── */
+.hmd-hero-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 65% 40%, rgba(18,52,100,0.85) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    linear-gradient(160deg, #0A1628 0%, #112240 50%, #0D1E3A 100%);
+  z-index: 0;
+}
+
+/* Fine diagonal rule lines — institutional gravitas */
+.hmd-hero-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    rgba(201,168,76,0.03) 0px,
+    rgba(201,168,76,0.03) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+  z-index: 0;
+}
+
+.hmd-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 680px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  gap: 0;
+  align-items: center;
+}
+
+/* ══════════════════════════════
+   LEFT — EDITORIAL COPY COLUMN
+   ══════════════════════════════ */
+.hmd-hero-left {
+  padding: 80px 56px 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-right: 1px solid rgba(201,168,76,0.18);
+}
+
+/* Overline badge */
+.hmd-overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.hmd-overline::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* Main headline */
+.hmd-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.12;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.hmd-headline em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+/* Gold rule */
+.hmd-rule {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 24px 0;
+}
+
+/* Sub-copy */
+.hmd-sub {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 400px;
+  margin-bottom: 36px;
+}
+
+/* Programme label */
+.hmd-programme-label {
+  display: inline-block;
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 8px 18px 8px 14px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--gold-pale);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  position: relative;
+}
+.hmd-programme-label::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+}
+
+/* CTA buttons */
+.hmd-ctas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hmd-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.hmd-btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+.hmd-btn-primary svg { flex-shrink: 0; }
+
+.hmd-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--ivory);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(250,247,240,0.25);
+  transition: color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  border-top: none; border-left: none; border-right: none;
+}
+.hmd-btn-ghost:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+/* ══════════════════════════════
+   RIGHT — PLATFORM PREVIEW CARD
+   ══════════════════════════════ */
+.hmd-hero-right {
+  padding: 60px 0 60px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Section title for right col */
+.hmd-right-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+/* Platform preview shell */
+.hmd-platform-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(201,168,76,0.15);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Evidence Summary block */
+.hmd-evidence-block {}
+
+.hmd-evidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  margin-bottom: 14px;
+}
+.hmd-evidence-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.hmd-evidence-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 3px 8px;
+}
+
+/* Article items */
+.hmd-article-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hmd-article-item:last-child { border-bottom: none; }
+
+.hmd-article-thumb {
+  width: 52px;
+  height: 42px;
+  background: var(--navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.hmd-article-thumb svg { opacity: 0.5; }
+
+.hmd-article-meta {}
+.hmd-article-name {
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+.hmd-article-date {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+/* Divider */
+.hmd-card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.3) 0%, transparent 100%);
+}
+
+/* Groups block */
+.hmd-groups-block {}
+
+.hmd-groups-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.hmd-groups-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.hmd-groups-tabs {
+  display: flex;
+  gap: 12px;
+}
+.hmd-groups-tab {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s;
+}
+.hmd-groups-tab.active {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.hmd-group-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.hmd-group-item:last-child { border-bottom: none; }
+
+.hmd-group-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-light), var(--gold) 200%);
+  border: 1px solid rgba(201,168,76,0.3);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: var(--gold-light);
+}
+.hmd-group-name {
+  font-size: 12px;
+  color: var(--ivory);
+  flex: 1;
+}
+.hmd-group-status {
+  font-size: 9.5px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+/* ── Activity feed notification ── */
+.hmd-activity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 10px 16px;
+  font-size: 11.5px;
+  color: var(--ivory);
+}
+.hmd-activity-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e4080, #c9a84c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: white;
+  flex-shrink: 0;
+}
+.hmd-activity-text { flex: 1; line-height: 1.4; }
+.hmd-activity-text strong { color: var(--gold-light); font-weight: 500; }
+.hmd-activity-time {
+  font-size: 9.5px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Bottom stat strip ── */
+.hmd-stat-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  margin-top: 0;
+}
+.hmd-stat {
+  padding: 24px 32px;
+  border-right: 1px solid rgba(201,168,76,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hmd-stat:last-child { border-right: none; }
+.hmd-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+}
+.hmd-stat-num span {
+  font-size: 18px;
+  color: var(--gold);
+}
+.hmd-stat-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hmd-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+  .hmd-hero-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 48px 0 40px;
+  }
+  .hmd-hero-right {
+    padding: 40px 0 48px;
+  }
+  .hmd-stat-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hmd-stat:nth-child(3) { border-right: none; }
+}
+
+/* ── Entrance animations ── */
+@keyframes hmdFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hmd-overline       { animation: hmdFadeUp 0.7s ease both; animation-delay: 0.1s; }
+.hmd-headline       { animation: hmdFadeUp 0.7s ease both; animation-delay: 0.22s; }
+.hmd-rule           { animation: hmdFadeUp 0.5s ease both; animation-delay: 0.35s; }
+.hmd-sub            { animation: hmdFadeUp 0.7s ease both; animation-delay: 0.4s; }
+.hmd-programme-label{ animation: hmdFadeUp 0.7s ease both; animation-delay: 0.5s; }
+.hmd-ctas           { animation: hmdFadeUp 0.7s ease both; animation-delay: 0.6s; }
+.hmd-hero-right     { animation: hmdFadeUp 0.8s ease both; animation-delay: 0.45s; }
+
+</style>
+</head>
+<body style="background:#0A1628; margin:0; padding:0;">
+
+<!-- ════════════════════════════════════════════════════════
+     HMD ELITE HERO SECTION
+     WordPress: paste into Custom HTML block, Elementor HTML
+     widget, or Divi Code Module. The Google Fonts link
+     should be enqueued in functions.php for production use.
+     ════════════════════════════════════════════════════════ -->
+
+<section class="hmd-hero-wrap">
+
+  <!-- ─── HERO GRID ─── -->
+  <div class="hmd-hero-inner">
+
+    <!-- LEFT: Editorial Copy -->
+    <div class="hmd-hero-left">
+
+      <p class="hmd-overline">Physician Executive Pathway</p>
+
+      <h2 class="hmd-headline">
+        Where Medicine<br>
+        Meets <em>Executive</em><br>
+        Leadership
+      </h2>
+
+      <div class="hmd-rule"></div>
+
+      <p class="hmd-sub">
+        Business administration, public health &amp; policy, and health informatics 
+        integrated into a single physician leadership pathway — 
+        designed for the C-suite from day one.
+      </p>
+
+      <div class="hmd-programme-label">
+        MD · MBA · MPH · MHI &nbsp;|&nbsp; 7-Year Integrated Programme
+      </div>
+
+      <div class="hmd-ctas">
+        <a href="#" class="hmd-btn-primary">
+          Explore the Pathway
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#" class="hmd-btn-ghost">
+          Join HMD Campus
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M1 6H11M7 2L11 6L7 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Platform Preview -->
+    <div class="hmd-hero-right">
+
+      <!-- Activity notification -->
+      <div class="hmd-activity-pill">
+        <div class="hmd-activity-avatar">BJ</div>
+        <div class="hmd-activity-text">
+          <strong>Bakary Jatta, MD</strong> posted a new Evidence Summary
+        </div>
+        <div class="hmd-activity-time">2 hrs ago</div>
+      </div>
+
+      <!-- Platform Card -->
+      <div class="hmd-platform-card">
+
+        <!-- Evidence Summary Section -->
+        <div class="hmd-evidence-block">
+          <div class="hmd-evidence-header">
+            <span class="hmd-evidence-title">HMD Evidence Summary</span>
+            <span class="hmd-evidence-badge">Latest</span>
+          </div>
+
+          <!-- Article 1 -->
+          <div class="hmd-article-item">
+            <div class="hmd-article-thumb">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="3" width="16" height="14" rx="1" stroke="#C9A84C" stroke-width="1.2"/>
+                <line x1="5" y1="7" x2="15" y2="7" stroke="#C9A84C" stroke-width="1"/>
+                <line x1="5" y1="10" x2="13" y2="10" stroke="#C9A84C" stroke-width="1"/>
+                <line x1="5" y1="13" x2="11" y2="13" stroke="#C9A84C" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="hmd-article-meta">
+              <div class="hmd-article-name">2026 AHA/ACP Guideline for the Evaluation and Diagnosis of Chest Pain</div>
+              <div class="hmd-article-date">February 21, 2026</div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="hmd-article-item">
+            <div class="hmd-article-thumb">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="3" width="16" height="14" rx="1" stroke="#C9A84C" stroke-width="1.2"/>
+                <line x1="5" y1="7" x2="15" y2="7" stroke="#C9A84C" stroke-width="1"/>
+                <line x1="5" y1="10" x2="13" y2="10" stroke="#C9A84C" stroke-width="1"/>
+                <line x1="5" y1="13" x2="11" y2="13" stroke="#C9A84C" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="hmd-article-meta">
+              <div class="hmd-article-name">Assessment of Adverse Effects Attributed to Drug Labels</div>
+              <div class="hmd-article-date">February 14, 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hmd-card-divider"></div>
+
+        <!-- Groups Section -->
+        <div class="hmd-groups-block">
+          <div class="hmd-groups-header">
+            <span class="hmd-groups-title">Groups</span>
+            <div class="hmd-groups-tabs">
+              <span class="hmd-groups-tab">Newest</span>
+              <span class="hmd-groups-tab active">Active</span>
+              <span class="hmd-groups-tab">Popular</span>
+            </div>
+          </div>
+
+          <div class="hmd-group-item">
+            <div class="hmd-group-avatar">GJ</div>
+            <div class="hmd-group-name">HMD Grand Journal Club</div>
+            <div class="hmd-group-status">Active · 2 weeks ago</div>
+          </div>
+          <div class="hmd-group-item">
+            <div class="hmd-group-avatar">CJ</div>
+            <div class="hmd-group-name">HMD Cardiology Journal Club</div>
+            <div class="hmd-group-status">Active · 2 weeks ago</div>
+          </div>
+        </div>
+
+      </div><!-- /platform card -->
+
+    </div><!-- /hero right -->
+  </div><!-- /hero inner -->
+
+  <!-- STAT STRIP -->
+  <div class="hmd-stat-strip">
+    <div class="hmd-stat">
+      <div class="hmd-stat-num">7<span>yr</span></div>
+      <div class="hmd-stat-label">Integrated Programme</div>
+    </div>
+    <div class="hmd-stat">
+      <div class="hmd-stat-num">4<span>°</span></div>
+      <div class="hmd-stat-label">MD · MBA · MPH · MHI</div>
+    </div>
+    <div class="hmd-stat">
+      <div class="hmd-stat-num">100<span>%</span></div>
+      <div class="hmd-stat-label">Asynchronous Online</div>
+    </div>
+  </div>
+
+</section>
+<!-- END HMD ELITE HERO SECTION -->
+
+</body>
+</html>

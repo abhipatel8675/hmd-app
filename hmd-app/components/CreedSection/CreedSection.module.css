@@ -1,0 +1,113 @@
+.wrap {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    rgba(201,168,76,0.02) 0px,
+    rgba(201,168,76,0.02) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+}
+
+.inner {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 52px 56px;
+  position: relative;
+}
+
+.openQuote {
+  display: block;
+  font-family: var(--font-cormorant), serif;
+  font-size: 80px;
+  line-height: 0.6;
+  color: var(--gold);
+  opacity: 0.45;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.quote {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.55;
+  color: var(--ivory);
+  margin-bottom: 28px;
+}
+
+.quote em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.body {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+}
+
+.rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 28px;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.attributionTo {
+  font-family: var(--font-cinzel), serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.attributionBody {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 520px;
+  margin-top: 4px;
+}
+
+.attributionFrom {
+  font-family: var(--font-cinzel), serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.5);
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .inner { padding: 60px 24px; }
+  .card { padding: 36px 28px; }
+}
