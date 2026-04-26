@@ -1122,6 +1122,52 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "blank-article",
+    title: "Untitled Article",
+    subtitle: "Article subtitle goes here — add your description for this clinical review.",
+    excerpt: "Brief excerpt summarizing the article content. This will appear in article cards and listings.",
+    author: "HMD Clinical Review",
+    authorRole: "HMD Faculty",
+    date: "Apr 25, 2026",
+    readTime: "— min read",
+    tags: ["Specialty", "Category", "Clinical Review"],
+    coverGradient: "linear-gradient(135deg, #0A1628 0%, #112240 55%, #1a3260 100%)",
+    coverAccent: "#C9A84C",
+    blocks: [
+      { type: "h2", text: "Background" },
+      {
+        type: "p",
+        text: "Add background information here.",
+      },
+      { type: "h2", text: "Etiology" },
+      {
+        type: "p",
+        text: "Add etiology information here.",
+      },
+      { type: "h2", text: "Clinical Presentation" },
+      {
+        type: "p",
+        text: "Add clinical presentation details here.",
+      },
+      { type: "h2", text: "Diagnostic Testing" },
+      {
+        type: "p",
+        text: "Add diagnostic testing information here.",
+      },
+      { type: "h2", text: "Treatment" },
+      {
+        type: "p",
+        text: "Add treatment information here.",
+      },
+      { type: "h2", text: "Follow-Up" },
+      {
+        type: "p",
+        text: "Add follow-up recommendations here.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
