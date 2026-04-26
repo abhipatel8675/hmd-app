@@ -134,7 +134,9 @@ function DownloadPdfButton() {
     const dateEl = document.querySelector<HTMLElement>(
       '[class*="metaPill"] [class*="metaPillVal"]'
     );
-    const bodyEl = document.querySelector<HTMLElement>('[class*="articleBody"]');
+    const bodyEl = document.querySelector<HTMLElement>(
+      '[class*="articleBody"]:not([class*="articleBodyWrap"])'
+    );
     const ktEl = document.querySelector<HTMLElement>('[class*="keyTakeaways"]');
 
     const title = titleEl?.innerText.trim() ?? document.title;
@@ -188,6 +190,8 @@ function DownloadPdfButton() {
   [class*="ktItem"] { margin: 2pt 0; }
   /* strip decorative spans / drop caps / dividers */
   [class*="closingRule"], [class*="closingNote"] { display: none; }
+  /* never include author avatars / author cards in PDF */
+  [class*="authorCard"], [class*="heroAuthorAvatar"], [class*="avatarImg"] { display: none !important; }
   [class*="dropCap"], [class*="firstParaCap"] { font-size: inherit !important; float: none !important; line-height: inherit !important; color: inherit !important; padding: 0 !important; margin: 0 !important; }
   .footer { margin-top: 22pt; padding-top: 10pt; border-top: 0.5pt solid #999; font-size: 8.5pt; color: #666; font-family: Helvetica, Arial, sans-serif; }
 </style>
