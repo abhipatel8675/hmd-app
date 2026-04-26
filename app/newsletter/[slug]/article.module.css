@@ -162,14 +162,14 @@
 .heroAuthorInfo { flex: 1; min-width: 200px; }
 .heroAuthorName {
   font-family: var(--font-dm-sans), sans-serif;
-  font-size: 14.5px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--ivory);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 .heroAuthorRole {
   font-family: var(--font-cormorant), serif;
-  font-size: 13.5px;
+  font-size: 11px;
   font-style: italic;
   color: var(--text-dim);
 }
