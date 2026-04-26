@@ -405,7 +405,7 @@ export default async function ArticlePage({
                   />
                 </div>
                 <div>
-                  <p className={styles.authorCardLabel}>Written By</p>
+                  <p className={styles.authorCardLabel}>By</p>
                   <h4 className={styles.authorCardName}>{article.author}</h4>
                   <p className={styles.authorCardRole}>{article.authorRole}</p>
                   <p className={styles.authorCardBio}>
