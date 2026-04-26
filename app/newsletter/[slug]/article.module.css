@@ -254,7 +254,7 @@
 }
 .railBtn:hover {
   border-color: var(--gold);
-  color: var(--navy);
+  color: #ffffff;
   background: var(--gold);
 }
 .railSep {
