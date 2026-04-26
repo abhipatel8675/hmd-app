@@ -409,9 +409,10 @@ export default async function ArticlePage({
                   <h4 className={styles.authorCardName}>{article.author}</h4>
                   <p className={styles.authorCardRole}>{article.authorRole}</p>
                   <p className={styles.authorCardBio}>
-                    A physician writing clearly and honestly about the evidence
-                    that shapes day-to-day clinical practice — what it says,
-                    where it stops, and why the distinction matters.
+                    Articles are presented for educational purposes only. All
+                    patient information has been de-identified and, where
+                    applicable, published with appropriate authorization.
+                    Content does not constitute medical advice.
                   </p>
                 </div>
               </aside>
