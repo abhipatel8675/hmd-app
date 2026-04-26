@@ -389,8 +389,8 @@ export default async function ArticlePage({
                 <div className={styles.closingRule} />
                 <p className={styles.closingNote}>
                   Published in{" "}
-                  <strong>HMD MedDigest — Medicine, via pristina</strong>. Written
-                  for working physicians, by working physicians.
+                  <strong>HMD MedDigest — Medicine, via pristina</strong>. For
+                  clinicians, physician-executives, & medical trainees.
                 </p>
               </div>
 

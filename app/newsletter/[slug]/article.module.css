@@ -255,7 +255,7 @@
 .railBtn:hover {
   border-color: var(--gold);
   color: #ffffff;
-  background: var(--gold);
+  background: rgba(250, 247, 240, 0.03);
 }
 .railSep {
   width: 28px;
@@ -501,11 +501,11 @@
 }
 .authorCardName {
   font-family: var(--font-cormorant), serif;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 500;
   color: var(--ivory);
   margin-bottom: 4px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 .authorCardRole {
   font-family: var(--font-cormorant), serif;
