@@ -219,6 +219,23 @@ export default async function ArticlePage({
 
   const firstParagraphIdx = article.blocks.findIndex((b) => b.type === "p");
 
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://meddigest.vercel.app";
+  const articleUrl = `${siteUrl}/newsletter/${article.slug}`;
+  const shareTitle = `${article.title} — HMD MedDigest`;
+  const encodedUrl = encodeURIComponent(articleUrl);
+  const encodedTitle = encodeURIComponent(shareTitle);
+  const encodedBody = encodeURIComponent(
+    `${shareTitle}\n\n${article.subtitle}\n\n${articleUrl}`
+  );
+
+  const shareLinks = {
+    gmail: `https://mail.google.com/mail/?view=cm&fs=1&su=${encodedTitle}&body=${encodedBody}`,
+    email: `mailto:?subject=${encodedTitle}&body=${encodedBody}`,
+    x: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+  };
+
   return (
     <>
       <TopProgressBar />
@@ -303,16 +320,38 @@ export default async function ArticlePage({
         <div className={styles.articleShell}>
           <aside className={styles.shareRail}>
             <div className={styles.railLabel}>Share</div>
-            <a href="#" className={styles.railBtn} aria-label="Copy link">
+            <a
+              href={articleUrl}
+              className={styles.railBtn}
+              aria-label="Copy link"
+            >
               ∞
             </a>
-            <a href="#" className={styles.railBtn} aria-label="Email">
+            <a
+              href={shareLinks.gmail}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.railBtn}
+              aria-label="Share via Gmail"
+            >
               ✉
             </a>
-            <a href="#" className={styles.railBtn} aria-label="X">
+            <a
+              href={shareLinks.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.railBtn}
+              aria-label="Share on X"
+            >
               X
             </a>
-            <a href="#" className={styles.railBtn} aria-label="LinkedIn">
+            <a
+              href={shareLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.railBtn}
+              aria-label="Share on LinkedIn"
+            >
               in
             </a>
             <div className={styles.railSep} />
