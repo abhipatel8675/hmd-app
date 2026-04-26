@@ -327,8 +327,8 @@ export const articles: Article[] = [
       "Retrograde flow from the left ventricle into the left atrium during systole — from myxomatous degeneration to MitraClip, the complete workup.",
     excerpt:
       "Primary versus secondary MR, acute versus chronic — how the etiology dictates the therapy, and when to refer for repair.",
-    author: "HMD Clinical Review",
-    authorRole: "HMD Faculty · Cardiology",
+    author: "Sadia Ambreen, MBBS, FCPS",
+    authorRole: "Bakary Jatta, MD, PGY-1",
     date: "Apr 22, 2026",
     readTime: "16 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
@@ -561,8 +561,8 @@ export const articles: Article[] = [
       "Narrowing of the mitral valve orifice impeding diastolic flow — still primarily rheumatic worldwide. From auscultation to balloon valvotomy.",
     excerpt:
       "A valvular disease of the developing world and an aging-population problem in high-income settings — how to recognize and treat it.",
-    author: "HMD Clinical Review",
-    authorRole: "HMD Faculty · Cardiology",
+    author: "Sadia Ambreen, MBBS, FCPS",
+    authorRole: "Bakary Jatta, MD, PGY-1",
     date: "Apr 22, 2026",
     readTime: "15 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
@@ -798,8 +798,8 @@ export const articles: Article[] = [
       "Retrograde flow from right ventricle to right atrium during systole — once ignored, increasingly recognized as an independent driver of mortality.",
     excerpt:
       "Functional versus primary TR, the emerging transcatheter options, and why chronic right-sided congestion is no longer a diagnosis of exclusion.",
-    author: "HMD Clinical Review",
-    authorRole: "HMD Faculty · Cardiology",
+    author: "Sadia Ambreen, MBBS, FCPS",
+    authorRole: "Bakary Jatta, MD, PGY-1",
     date: "Apr 22, 2026",
     readTime: "17 min read",
     tags: ["Cardiology", "Valvular Disease", "Clinical Review"],
